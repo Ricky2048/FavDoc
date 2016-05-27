@@ -21,7 +21,7 @@
 
 + (OFDataHelper *)shareInstance;
 
-- (OFBaseEntity *)insertToTable:(NSString *)tName;
+- (id)insertToTable:(NSString *)tName;
 
 - (NSArray *)fetcthTable:(NSString *)tName;
 - (NSArray *)fetcthTable:(NSString *)tName predicate:(NSPredicate *)predicate;

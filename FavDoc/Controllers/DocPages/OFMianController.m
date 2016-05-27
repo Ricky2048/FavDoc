@@ -26,12 +26,11 @@
 }
 
 @property (nonatomic, strong) NSDictionary *fileDic;
+
 @property (nonatomic, strong) OFSelectOperationView *maskView;
 
 
 @end
-
-
 
 @implementation OFMianController
 
@@ -262,5 +261,6 @@
         
     }];
 }
+
 
 @end

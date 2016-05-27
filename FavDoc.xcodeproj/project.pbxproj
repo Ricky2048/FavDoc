@@ -8,16 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5E0841CE1CF57C8400A47C63 /* OFDocHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841CD1CF57C8400A47C63 /* OFDocHelper.m */; };
-		5E0841E31CF5810C00A47C63 /* OFDocEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841D01CF5810C00A47C63 /* OFDocEntity+CoreDataProperties.m */; };
-		5E0841E41CF5810C00A47C63 /* OFDocEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841D21CF5810C00A47C63 /* OFDocEntity.m */; };
-		5E0841E51CF5810C00A47C63 /* OFUserEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841D41CF5810C00A47C63 /* OFUserEntity+CoreDataProperties.m */; };
-		5E0841E61CF5810C00A47C63 /* OFUserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841D61CF5810C00A47C63 /* OFUserEntity.m */; };
-		5E0841E71CF5810C00A47C63 /* OFFavEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841D81CF5810C00A47C63 /* OFFavEntity+CoreDataProperties.m */; };
-		5E0841E81CF5810C00A47C63 /* OFFavEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841DA1CF5810C00A47C63 /* OFFavEntity.m */; };
-		5E0841E91CF5810C00A47C63 /* OFBaseEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841DC1CF5810C00A47C63 /* OFBaseEntity+CoreDataProperties.m */; };
-		5E0841EA1CF5810C00A47C63 /* OFBaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841DE1CF5810C00A47C63 /* OFBaseEntity.m */; };
-		5E0841EB1CF5810C00A47C63 /* OFHistoryEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841E01CF5810C00A47C63 /* OFHistoryEntity+CoreDataProperties.m */; };
-		5E0841EC1CF5810C00A47C63 /* OFHistoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841E21CF5810C00A47C63 /* OFHistoryEntity.m */; };
 		5E0841F01CF5908500A47C63 /* demo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E0841EF1CF5908500A47C63 /* demo.jpg */; };
 		5E3BB3E11CF3EEFC006DC603 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E01CF3EEFC006DC603 /* main.m */; };
 		5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E31CF3EEFC006DC603 /* AppDelegate.m */; };
@@ -45,6 +35,14 @@
 		5E4EA3421CF6DD0C00EE6764 /* OFImagePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E4EA3401CF6DD0C00EE6764 /* OFImagePickerController.xib */; };
 		5E4EA3441CF6E58400EE6764 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4EA3431CF6E58400EE6764 /* QuartzCore.framework */; };
 		5E673D3D1CF74D64008304AC /* OFSelectOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D3C1CF74D64008304AC /* OFSelectOperationView.m */; };
+		5E673D5D1CF841CA008304AC /* OFHistoryEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D4E1CF841CA008304AC /* OFHistoryEntity+CoreDataProperties.m */; };
+		5E673D5E1CF841CA008304AC /* OFHistoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D501CF841CA008304AC /* OFHistoryEntity.m */; };
+		5E673D5F1CF841CA008304AC /* OFFavEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D521CF841CA008304AC /* OFFavEntity+CoreDataProperties.m */; };
+		5E673D601CF841CA008304AC /* OFFavEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D541CF841CA008304AC /* OFFavEntity.m */; };
+		5E673D611CF841CA008304AC /* OFBaseEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D561CF841CA008304AC /* OFBaseEntity+CoreDataProperties.m */; };
+		5E673D621CF841CA008304AC /* OFBaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D581CF841CA008304AC /* OFBaseEntity.m */; };
+		5E673D631CF841CA008304AC /* OFUserEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D5A1CF841CA008304AC /* OFUserEntity+CoreDataProperties.m */; };
+		5E673D641CF841CA008304AC /* OFUserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D5C1CF841CA008304AC /* OFUserEntity.m */; };
 		5ED435071CF6F03C00867059 /* OFImagePreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED435051CF6F03C00867059 /* OFImagePreviewController.m */; };
 		5ED435081CF6F03C00867059 /* OFImagePreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED435061CF6F03C00867059 /* OFImagePreviewController.xib */; };
 		5ED4350B1CF6FB0E00867059 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4350A1CF6FB0E00867059 /* Utils.m */; };
@@ -53,26 +51,6 @@
 /* Begin PBXFileReference section */
 		5E0841CC1CF57C8400A47C63 /* OFDocHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFDocHelper.h; sourceTree = "<group>"; };
 		5E0841CD1CF57C8400A47C63 /* OFDocHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFDocHelper.m; sourceTree = "<group>"; };
-		5E0841CF1CF5810C00A47C63 /* OFDocEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OFDocEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		5E0841D01CF5810C00A47C63 /* OFDocEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFDocEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		5E0841D11CF5810C00A47C63 /* OFDocEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFDocEntity.h; sourceTree = "<group>"; };
-		5E0841D21CF5810C00A47C63 /* OFDocEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFDocEntity.m; sourceTree = "<group>"; };
-		5E0841D31CF5810C00A47C63 /* OFUserEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OFUserEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		5E0841D41CF5810C00A47C63 /* OFUserEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFUserEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		5E0841D51CF5810C00A47C63 /* OFUserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFUserEntity.h; sourceTree = "<group>"; };
-		5E0841D61CF5810C00A47C63 /* OFUserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFUserEntity.m; sourceTree = "<group>"; };
-		5E0841D71CF5810C00A47C63 /* OFFavEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OFFavEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		5E0841D81CF5810C00A47C63 /* OFFavEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFFavEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		5E0841D91CF5810C00A47C63 /* OFFavEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFavEntity.h; sourceTree = "<group>"; };
-		5E0841DA1CF5810C00A47C63 /* OFFavEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFavEntity.m; sourceTree = "<group>"; };
-		5E0841DB1CF5810C00A47C63 /* OFBaseEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OFBaseEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		5E0841DC1CF5810C00A47C63 /* OFBaseEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFBaseEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		5E0841DD1CF5810C00A47C63 /* OFBaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBaseEntity.h; sourceTree = "<group>"; };
-		5E0841DE1CF5810C00A47C63 /* OFBaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBaseEntity.m; sourceTree = "<group>"; };
-		5E0841DF1CF5810C00A47C63 /* OFHistoryEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OFHistoryEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		5E0841E01CF5810C00A47C63 /* OFHistoryEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFHistoryEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
-		5E0841E11CF5810C00A47C63 /* OFHistoryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHistoryEntity.h; sourceTree = "<group>"; };
-		5E0841E21CF5810C00A47C63 /* OFHistoryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHistoryEntity.m; sourceTree = "<group>"; };
 		5E0841EF1CF5908500A47C63 /* demo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo.jpg; sourceTree = "<group>"; };
 		5E3BB3DC1CF3EEFC006DC603 /* FavDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3BB3E01CF3EEFC006DC603 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -111,7 +89,7 @@
 		5E3BB4C01CF45338006DC603 /* OFCatalogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFCatalogView.m; sourceTree = "<group>"; };
 		5E4EA32F1CF694A300EE6764 /* OFDocCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFDocCell.h; sourceTree = "<group>"; };
 		5E4EA3301CF694A300EE6764 /* OFDocCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFDocCell.m; sourceTree = "<group>"; };
-		5E4EA3311CF694A300EE6764 /* OFDocCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFDocCell.xib; sourceTree = "<group>"; };
+		5E4EA3311CF694A300EE6764 /* OFDocCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFDocCell.xib; path = ../DocPages/OFDocCell.xib; sourceTree = "<group>"; };
 		5E4EA3391CF6954F00EE6764 /* OFFolderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFolderCell.h; sourceTree = "<group>"; };
 		5E4EA33A1CF6954F00EE6764 /* OFFolderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFolderCell.m; sourceTree = "<group>"; };
 		5E4EA33B1CF6954F00EE6764 /* OFFolderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFolderCell.xib; sourceTree = "<group>"; };
@@ -121,6 +99,22 @@
 		5E4EA3431CF6E58400EE6764 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5E673D3B1CF74D64008304AC /* OFSelectOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFSelectOperationView.h; sourceTree = "<group>"; };
 		5E673D3C1CF74D64008304AC /* OFSelectOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFSelectOperationView.m; sourceTree = "<group>"; };
+		5E673D4D1CF841CA008304AC /* OFHistoryEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OFHistoryEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5E673D4E1CF841CA008304AC /* OFHistoryEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFHistoryEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5E673D4F1CF841CA008304AC /* OFHistoryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHistoryEntity.h; sourceTree = "<group>"; };
+		5E673D501CF841CA008304AC /* OFHistoryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHistoryEntity.m; sourceTree = "<group>"; };
+		5E673D511CF841CA008304AC /* OFFavEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OFFavEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5E673D521CF841CA008304AC /* OFFavEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFFavEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5E673D531CF841CA008304AC /* OFFavEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFavEntity.h; sourceTree = "<group>"; };
+		5E673D541CF841CA008304AC /* OFFavEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFavEntity.m; sourceTree = "<group>"; };
+		5E673D551CF841CA008304AC /* OFBaseEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OFBaseEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5E673D561CF841CA008304AC /* OFBaseEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFBaseEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5E673D571CF841CA008304AC /* OFBaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBaseEntity.h; sourceTree = "<group>"; };
+		5E673D581CF841CA008304AC /* OFBaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBaseEntity.m; sourceTree = "<group>"; };
+		5E673D591CF841CA008304AC /* OFUserEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OFUserEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5E673D5A1CF841CA008304AC /* OFUserEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFUserEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5E673D5B1CF841CA008304AC /* OFUserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFUserEntity.h; sourceTree = "<group>"; };
+		5E673D5C1CF841CA008304AC /* OFUserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFUserEntity.m; sourceTree = "<group>"; };
 		5ED435041CF6F03C00867059 /* OFImagePreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFImagePreviewController.h; sourceTree = "<group>"; };
 		5ED435051CF6F03C00867059 /* OFImagePreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFImagePreviewController.m; sourceTree = "<group>"; };
 		5ED435061CF6F03C00867059 /* OFImagePreviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFImagePreviewController.xib; sourceTree = "<group>"; };
@@ -143,26 +137,22 @@
 		5E0841ED1CF5813800A47C63 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				5E0841DD1CF5810C00A47C63 /* OFBaseEntity.h */,
-				5E0841DE1CF5810C00A47C63 /* OFBaseEntity.m */,
-				5E0841DB1CF5810C00A47C63 /* OFBaseEntity+CoreDataProperties.h */,
-				5E0841DC1CF5810C00A47C63 /* OFBaseEntity+CoreDataProperties.m */,
-				5E0841D11CF5810C00A47C63 /* OFDocEntity.h */,
-				5E0841D21CF5810C00A47C63 /* OFDocEntity.m */,
-				5E0841CF1CF5810C00A47C63 /* OFDocEntity+CoreDataProperties.h */,
-				5E0841D01CF5810C00A47C63 /* OFDocEntity+CoreDataProperties.m */,
-				5E0841D91CF5810C00A47C63 /* OFFavEntity.h */,
-				5E0841DA1CF5810C00A47C63 /* OFFavEntity.m */,
-				5E0841D71CF5810C00A47C63 /* OFFavEntity+CoreDataProperties.h */,
-				5E0841D81CF5810C00A47C63 /* OFFavEntity+CoreDataProperties.m */,
-				5E0841E11CF5810C00A47C63 /* OFHistoryEntity.h */,
-				5E0841E21CF5810C00A47C63 /* OFHistoryEntity.m */,
-				5E0841DF1CF5810C00A47C63 /* OFHistoryEntity+CoreDataProperties.h */,
-				5E0841E01CF5810C00A47C63 /* OFHistoryEntity+CoreDataProperties.m */,
-				5E0841D51CF5810C00A47C63 /* OFUserEntity.h */,
-				5E0841D61CF5810C00A47C63 /* OFUserEntity.m */,
-				5E0841D31CF5810C00A47C63 /* OFUserEntity+CoreDataProperties.h */,
-				5E0841D41CF5810C00A47C63 /* OFUserEntity+CoreDataProperties.m */,
+				5E673D4D1CF841CA008304AC /* OFHistoryEntity+CoreDataProperties.h */,
+				5E673D4E1CF841CA008304AC /* OFHistoryEntity+CoreDataProperties.m */,
+				5E673D4F1CF841CA008304AC /* OFHistoryEntity.h */,
+				5E673D501CF841CA008304AC /* OFHistoryEntity.m */,
+				5E673D511CF841CA008304AC /* OFFavEntity+CoreDataProperties.h */,
+				5E673D521CF841CA008304AC /* OFFavEntity+CoreDataProperties.m */,
+				5E673D531CF841CA008304AC /* OFFavEntity.h */,
+				5E673D541CF841CA008304AC /* OFFavEntity.m */,
+				5E673D551CF841CA008304AC /* OFBaseEntity+CoreDataProperties.h */,
+				5E673D561CF841CA008304AC /* OFBaseEntity+CoreDataProperties.m */,
+				5E673D571CF841CA008304AC /* OFBaseEntity.h */,
+				5E673D581CF841CA008304AC /* OFBaseEntity.m */,
+				5E673D591CF841CA008304AC /* OFUserEntity+CoreDataProperties.h */,
+				5E673D5A1CF841CA008304AC /* OFUserEntity+CoreDataProperties.m */,
+				5E673D5B1CF841CA008304AC /* OFUserEntity.h */,
+				5E673D5C1CF841CA008304AC /* OFUserEntity.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -298,6 +288,7 @@
 		5E3BB40A1CF3F25A006DC603 /* SettingPages */ = {
 			isa = PBXGroup;
 			children = (
+				5E4EA3311CF694A300EE6764 /* OFDocCell.xib */,
 			);
 			path = SettingPages;
 			sourceTree = "<group>";
@@ -389,7 +380,6 @@
 			children = (
 				5E4EA32F1CF694A300EE6764 /* OFDocCell.h */,
 				5E4EA3301CF694A300EE6764 /* OFDocCell.m */,
-				5E4EA3311CF694A300EE6764 /* OFDocCell.xib */,
 				5E4EA3391CF6954F00EE6764 /* OFFolderCell.h */,
 				5E4EA33A1CF6954F00EE6764 /* OFFolderCell.m */,
 				5E4EA33B1CF6954F00EE6764 /* OFFolderCell.xib */,
@@ -482,12 +472,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E673D5E1CF841CA008304AC /* OFHistoryEntity.m in Sources */,
 				5ED435071CF6F03C00867059 /* OFImagePreviewController.m in Sources */,
-				5E0841E61CF5810C00A47C63 /* OFUserEntity.m in Sources */,
 				5E4EA3321CF694A300EE6764 /* OFDocCell.m in Sources */,
 				5ED4350B1CF6FB0E00867059 /* Utils.m in Sources */,
 				5E3BB4051CF3F1D9006DC603 /* OFBaseTableController.m in Sources */,
-				5E0841E81CF5810C00A47C63 /* OFFavEntity.m in Sources */,
 				5E3BB4B31CF439CB006DC603 /* OFStartController.m in Sources */,
 				5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */,
 				5E3BB42C1CF3FBD2006DC603 /* OFDataHelper.m in Sources */,
@@ -495,23 +484,22 @@
 				5E3BB4081CF3F1F8006DC603 /* OFBaseController.m in Sources */,
 				5E3BB3ED1CF3EEFC006DC603 /* FavDoc.xcdatamodeld in Sources */,
 				5E673D3D1CF74D64008304AC /* OFSelectOperationView.m in Sources */,
-				5E0841EA1CF5810C00A47C63 /* OFBaseEntity.m in Sources */,
+				5E673D641CF841CA008304AC /* OFUserEntity.m in Sources */,
+				5E673D631CF841CA008304AC /* OFUserEntity+CoreDataProperties.m in Sources */,
 				5E3BB3E11CF3EEFC006DC603 /* main.m in Sources */,
 				5E3BB4AD1CF434C4006DC603 /* OFMianController.m in Sources */,
-				5E0841EC1CF5810C00A47C63 /* OFHistoryEntity.m in Sources */,
 				5E3BB4BA1CF43AE3006DC603 /* ReplaceNoAnimationSegue.m in Sources */,
 				5E3BB40E1CF3F287006DC603 /* OFMianTabbarController.m in Sources */,
-				5E0841E91CF5810C00A47C63 /* OFBaseEntity+CoreDataProperties.m in Sources */,
-				5E0841EB1CF5810C00A47C63 /* OFHistoryEntity+CoreDataProperties.m in Sources */,
 				5E3BB4C11CF45338006DC603 /* OFCatalogView.m in Sources */,
 				5E3BB4281CF3FB46006DC603 /* UITabBar+MFBadge.m in Sources */,
-				5E0841E51CF5810C00A47C63 /* OFUserEntity+CoreDataProperties.m in Sources */,
-				5E0841E31CF5810C00A47C63 /* OFDocEntity+CoreDataProperties.m in Sources */,
+				5E673D5F1CF841CA008304AC /* OFFavEntity+CoreDataProperties.m in Sources */,
 				5E4EA3411CF6DD0C00EE6764 /* OFImagePickerController.m in Sources */,
+				5E673D601CF841CA008304AC /* OFFavEntity.m in Sources */,
+				5E673D5D1CF841CA008304AC /* OFHistoryEntity+CoreDataProperties.m in Sources */,
 				5E3BB4B91CF43AE3006DC603 /* PushNoAnimationSegue.m in Sources */,
-				5E0841E41CF5810C00A47C63 /* OFDocEntity.m in Sources */,
+				5E673D621CF841CA008304AC /* OFBaseEntity.m in Sources */,
 				5E3BB4BD1CF43E2E006DC603 /* OFBaseNavController.m in Sources */,
-				5E0841E71CF5810C00A47C63 /* OFFavEntity+CoreDataProperties.m in Sources */,
+				5E673D611CF841CA008304AC /* OFBaseEntity+CoreDataProperties.m in Sources */,
 				5E0841CE1CF57C8400A47C63 /* OFDocHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,6 @@
     
     __weak IBOutlet UIImageView *_imageView;
     
-    
 }
 @end
 
@@ -32,9 +31,10 @@
             _imageView.image = image;
         }
     }
-
     
     [self addGestureRecognizerToView:_imageView];
+    
+    [self addToHistory:_filePath];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +53,23 @@
 */
 
 #pragma mark - Functions
+
+- (void)addToHistory:(NSString *)path
+{
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"path == %@",path];
+    NSArray *results = [[OFDataHelper shareInstance] fetcthTable:kTableHistory predicate:predicate];
+    
+    OFHistoryEntity *entity = results.firstObject;
+
+    if (entity == nil) {
+        
+        entity = [[OFDataHelper shareInstance] insertToTable:kTableHistory];
+        entity.path = path;
+        entity.name = [path lastPathComponent];
+    }
+    entity.last_open = [NSDate date];
+}
 
 // 添加所有的手势
 - (void) addGestureRecognizerToView:(UIView *)view
@@ -112,6 +129,14 @@
 }
 
 - (IBAction)operateAction:(id)sender {
+    
+    NSArray *results = [[OFDataHelper shareInstance] fetcthTable:kTableHistory predicate:nil];
+
+    NSLog([results description]);
+    
+    NSArray *results1 = [[OFDataHelper shareInstance] fetcthTable:kTableFav predicate:nil];
+    
+    NSLog([results1 description]);
 }
 
 @end

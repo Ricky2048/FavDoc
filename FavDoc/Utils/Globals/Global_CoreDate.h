@@ -11,7 +11,6 @@
 
 #define kTableBase      @"Base"
 #define kTableUser      @"User"
-#define kTableDoc       @"Doc"
 #define kTableFav       @"Fav"
 #define kTableHistory   @"History"
 

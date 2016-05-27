@@ -2,7 +2,7 @@
 //  OFHistoryEntity+CoreDataProperties.h
 //  FavDoc
 //
-//  Created by Ricky Lin on 16/5/25.
+//  Created by Ricky Lin on 16/5/27.
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,9 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OFHistoryEntity (CoreDataProperties)
 
+@property (nullable, nonatomic, retain) NSDate *last_open;
+@property (nullable, nonatomic, retain) NSString *name;
+@property (nullable, nonatomic, retain) NSString *path;
 @property (nullable, nonatomic, retain) NSNumber *history_id;
-@property (nullable, nonatomic, retain) NSDate *date_open;
-@property (nullable, nonatomic, retain) OFDocEntity *doc;
 
 @end
 

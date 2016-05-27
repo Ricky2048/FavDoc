@@ -31,7 +31,6 @@ typedef void (^SelectOperationBlock) (OFSelectOperation operation);
     
     UIView *_maskView;
     
-    
 }
 
 - (void)addSelectBlock:(SelectOperationBlock)block;

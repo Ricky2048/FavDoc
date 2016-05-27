@@ -11,8 +11,8 @@
 
 #import "OFBaseEntity.h"
 #import "OFFavEntity.h"
-#import "OFDocEntity.h"
 #import "OFUserEntity.h"
+#import "OFHistoryEntity.h"
 
 #import "OFDataHelper.h"
 #import "OFDocHelper.h"

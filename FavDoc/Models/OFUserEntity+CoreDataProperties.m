@@ -2,7 +2,7 @@
 //  OFUserEntity+CoreDataProperties.m
 //  FavDoc
 //
-//  Created by Ricky Lin on 16/5/25.
+//  Created by Ricky Lin on 16/5/27.
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,12 +13,12 @@
 
 @implementation OFUserEntity (CoreDataProperties)
 
+@dynamic date_latest_login;
 @dynamic email;
 @dynamic mobile;
 @dynamic name;
 @dynamic password;
 @dynamic password_md5;
 @dynamic user_id;
-@dynamic date_latest_login;
 
 @end

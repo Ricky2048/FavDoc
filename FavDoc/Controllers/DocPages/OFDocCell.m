@@ -95,6 +95,25 @@
 {
     return @"1231.3.5";
 }
+- (IBAction)moreAction:(id)sender {
+    
+    [self addToFav:[_path stringByAppendingPathComponent:_name]];
+}
 
+- (void)addToFav:(NSString *)path
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"path == %@",path];
+    NSArray *results = [[OFDataHelper shareInstance] fetcthTable:kTableFav predicate:predicate];
+  
+    OFFavEntity *entity = results.lastObject;
+    if (entity == nil) {
+        
+        entity = [[OFDataHelper shareInstance] insertToTable:kTableFav];
+        entity.path = path;
+        entity.name = [path lastPathComponent];
+    }
+    entity.collect_date = [NSDate date];
+
+}
 
 @end

@@ -24,7 +24,7 @@
 
 #pragma mark - Data manager
 
-- (OFBaseEntity *)insertToTable:(NSString *)tName
+- (id)insertToTable:(NSString *)tName
 {
     OFBaseEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:tName inManagedObjectContext:[self managedObjectContext]];
    
@@ -35,17 +35,17 @@
 {
     return [self fetcthTable:tName predicate:nil];
 }
+
 - (NSArray *)fetcthTable:(NSString *)tName predicate:(NSPredicate *)predicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
-    if (predicate == nil) {
-        predicate = [NSPredicate predicateWithFormat:@""];
-    }
-    
     [request setEntity:[NSEntityDescription entityForName:tName inManagedObjectContext:[self managedObjectContext]]];
     
-    [request setPredicate:predicate];
+    if (predicate) {
+        
+        [request setPredicate:predicate];
+    }
     
     NSError *error = nil;
     
@@ -73,7 +73,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"MyFamily" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"FavDoc" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }

@@ -2,18 +2,16 @@
 //  OFFavEntity.h
 //  FavDoc
 //
-//  Created by Ricky Lin on 16/5/25.
+//  Created by Ricky Lin on 16/5/27.
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-
-@class OFDocEntity;
+#import "OFBaseEntity.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OFFavEntity : NSManagedObject
+@interface OFFavEntity : OFBaseEntity
 
 // Insert code here to declare functionality of your managed object subclass
 

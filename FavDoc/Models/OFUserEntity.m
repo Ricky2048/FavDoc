@@ -2,7 +2,7 @@
 //  OFUserEntity.m
 //  FavDoc
 //
-//  Created by Ricky Lin on 16/5/25.
+//  Created by Ricky Lin on 16/5/27.
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 

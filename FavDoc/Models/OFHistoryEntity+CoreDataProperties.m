@@ -2,7 +2,7 @@
 //  OFHistoryEntity+CoreDataProperties.m
 //  FavDoc
 //
-//  Created by Ricky Lin on 16/5/25.
+//  Created by Ricky Lin on 16/5/27.
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,8 +13,9 @@
 
 @implementation OFHistoryEntity (CoreDataProperties)
 
+@dynamic last_open;
+@dynamic name;
+@dynamic path;
 @dynamic history_id;
-@dynamic date_open;
-@dynamic doc;
 
 @end

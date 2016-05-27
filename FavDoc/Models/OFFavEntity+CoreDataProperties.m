@@ -2,7 +2,7 @@
 //  OFFavEntity+CoreDataProperties.m
 //  FavDoc
 //
-//  Created by Ricky Lin on 16/5/25.
+//  Created by Ricky Lin on 16/5/27.
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,8 +13,10 @@
 
 @implementation OFFavEntity (CoreDataProperties)
 
+@dynamic collect_date;
+@dynamic name;
+@dynamic path;
+@dynamic remark_color;
 @dynamic fav_id;
-@dynamic date_fav;
-@dynamic doc;
 
 @end
