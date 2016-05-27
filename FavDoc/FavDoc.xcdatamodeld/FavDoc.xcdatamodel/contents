@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Base" representedClassName="OFBaseEntity" syncable="YES"/>
+    <entity name="Doc" representedClassName="OFDocEntity" syncable="YES">
+        <attribute name="date_create" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date_open" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="doc_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="is_delete" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_fav" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_hide" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remark_color" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="fav" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fav" inverseName="doc" inverseEntity="Fav" syncable="YES"/>
+        <relationship name="history" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="History" inverseName="doc" inverseEntity="History" syncable="YES"/>
+    </entity>
+    <entity name="Fav" representedClassName="OFFavEntity" syncable="YES">
+        <attribute name="date_fav" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fav_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="doc" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Doc" inverseName="fav" inverseEntity="Doc" syncable="YES"/>
+    </entity>
+    <entity name="History" representedClassName="OFHistoryEntity" syncable="YES">
+        <attribute name="date_open" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="history_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="doc" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Doc" inverseName="history" inverseEntity="Doc" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="OFUserEntity" syncable="YES">
+        <attribute name="date_latest_login" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password_md5" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Base" positionX="-9" positionY="117" width="128" height="45"/>
+        <element name="Doc" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="Fav" positionX="-36" positionY="81" width="128" height="90"/>
+        <element name="History" positionX="-27" positionY="81" width="128" height="90"/>
+        <element name="User" positionX="-45" positionY="54" width="128" height="150"/>
+    </elements>
+</model>
