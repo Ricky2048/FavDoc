@@ -1,14 +1,14 @@
 //
-//  OFDocCell.m
+//  OFFileCell.m
 //  FavDoc
 //
-//  Created by Ricky Lin on 16/5/26.
+//  Created by Ricky Lin on 16/5/27.
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 
-#import "OFDocCell.h"
+#import "OFFileCell.h"
 
-@implementation OFDocCell
+@implementation OFFileCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -24,7 +24,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -37,7 +37,7 @@
     
     NSString *filePath = [_path stringByAppendingPathComponent:_name];
     NSDictionary *dic = [[OFDocHelper shareInstance] getFlileInfoByPath:filePath];
-//    NSLog([dic description]);
+    //    NSLog([dic description]);
     
     NSNumber *fileSize = dic[NSFileSize];
     NSString *sizeStr = [OFDocHelper getFileSizeStr:fileSize];
@@ -57,7 +57,7 @@
         _fileTypeLabel.text = extensionStr;
         _cs_typeLabel_width.constant = 44;
         _cs_nameLabel_left.constant = 8;
-
+        
     }else {
         _fileTypeLabel.text = @"";
         _cs_typeLabel_width.constant = 0;
@@ -104,7 +104,7 @@
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"path == %@",path];
     NSArray *results = [[OFDataHelper shareInstance] fetcthTable:kTableFav predicate:predicate];
-  
+    
     OFFavEntity *entity = results.lastObject;
     if (entity == nil) {
         
@@ -113,7 +113,8 @@
         entity.name = [path lastPathComponent];
     }
     entity.collect_date = [NSDate date];
-
+    
 }
+
 
 @end

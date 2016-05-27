@@ -27,8 +27,6 @@
 		5E3BB4BA1CF43AE3006DC603 /* ReplaceNoAnimationSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB4B81CF43AE3006DC603 /* ReplaceNoAnimationSegue.m */; };
 		5E3BB4BD1CF43E2E006DC603 /* OFBaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB4BC1CF43E2E006DC603 /* OFBaseNavController.m */; };
 		5E3BB4C11CF45338006DC603 /* OFCatalogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB4C01CF45338006DC603 /* OFCatalogView.m */; };
-		5E4EA3321CF694A300EE6764 /* OFDocCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EA3301CF694A300EE6764 /* OFDocCell.m */; };
-		5E4EA3331CF694A300EE6764 /* OFDocCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E4EA3311CF694A300EE6764 /* OFDocCell.xib */; };
 		5E4EA33C1CF6954F00EE6764 /* OFFolderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EA33A1CF6954F00EE6764 /* OFFolderCell.m */; };
 		5E4EA33D1CF6954F00EE6764 /* OFFolderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E4EA33B1CF6954F00EE6764 /* OFFolderCell.xib */; };
 		5E4EA3411CF6DD0C00EE6764 /* OFImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4EA33F1CF6DD0C00EE6764 /* OFImagePickerController.m */; };
@@ -43,6 +41,8 @@
 		5E673D621CF841CA008304AC /* OFBaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D581CF841CA008304AC /* OFBaseEntity.m */; };
 		5E673D631CF841CA008304AC /* OFUserEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D5A1CF841CA008304AC /* OFUserEntity+CoreDataProperties.m */; };
 		5E673D641CF841CA008304AC /* OFUserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D5C1CF841CA008304AC /* OFUserEntity.m */; };
+		5E673D681CF84C19008304AC /* OFFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D661CF84C19008304AC /* OFFileCell.m */; };
+		5E673D691CF84C19008304AC /* OFFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E673D671CF84C19008304AC /* OFFileCell.xib */; };
 		5ED435071CF6F03C00867059 /* OFImagePreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED435051CF6F03C00867059 /* OFImagePreviewController.m */; };
 		5ED435081CF6F03C00867059 /* OFImagePreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED435061CF6F03C00867059 /* OFImagePreviewController.xib */; };
 		5ED4350B1CF6FB0E00867059 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4350A1CF6FB0E00867059 /* Utils.m */; };
@@ -87,9 +87,6 @@
 		5E3BB4BC1CF43E2E006DC603 /* OFBaseNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBaseNavController.m; sourceTree = "<group>"; };
 		5E3BB4BF1CF45338006DC603 /* OFCatalogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFCatalogView.h; sourceTree = "<group>"; };
 		5E3BB4C01CF45338006DC603 /* OFCatalogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFCatalogView.m; sourceTree = "<group>"; };
-		5E4EA32F1CF694A300EE6764 /* OFDocCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFDocCell.h; sourceTree = "<group>"; };
-		5E4EA3301CF694A300EE6764 /* OFDocCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFDocCell.m; sourceTree = "<group>"; };
-		5E4EA3311CF694A300EE6764 /* OFDocCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OFDocCell.xib; path = ../DocPages/OFDocCell.xib; sourceTree = "<group>"; };
 		5E4EA3391CF6954F00EE6764 /* OFFolderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFolderCell.h; sourceTree = "<group>"; };
 		5E4EA33A1CF6954F00EE6764 /* OFFolderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFolderCell.m; sourceTree = "<group>"; };
 		5E4EA33B1CF6954F00EE6764 /* OFFolderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFolderCell.xib; sourceTree = "<group>"; };
@@ -115,6 +112,9 @@
 		5E673D5A1CF841CA008304AC /* OFUserEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OFUserEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		5E673D5B1CF841CA008304AC /* OFUserEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFUserEntity.h; sourceTree = "<group>"; };
 		5E673D5C1CF841CA008304AC /* OFUserEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFUserEntity.m; sourceTree = "<group>"; };
+		5E673D651CF84C19008304AC /* OFFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFileCell.h; sourceTree = "<group>"; };
+		5E673D661CF84C19008304AC /* OFFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFileCell.m; sourceTree = "<group>"; };
+		5E673D671CF84C19008304AC /* OFFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFileCell.xib; sourceTree = "<group>"; };
 		5ED435041CF6F03C00867059 /* OFImagePreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFImagePreviewController.h; sourceTree = "<group>"; };
 		5ED435051CF6F03C00867059 /* OFImagePreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFImagePreviewController.m; sourceTree = "<group>"; };
 		5ED435061CF6F03C00867059 /* OFImagePreviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFImagePreviewController.xib; sourceTree = "<group>"; };
@@ -288,7 +288,6 @@
 		5E3BB40A1CF3F25A006DC603 /* SettingPages */ = {
 			isa = PBXGroup;
 			children = (
-				5E4EA3311CF694A300EE6764 /* OFDocCell.xib */,
 			);
 			path = SettingPages;
 			sourceTree = "<group>";
@@ -378,8 +377,9 @@
 		5E4EA32E1CF6944C00EE6764 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				5E4EA32F1CF694A300EE6764 /* OFDocCell.h */,
-				5E4EA3301CF694A300EE6764 /* OFDocCell.m */,
+				5E673D651CF84C19008304AC /* OFFileCell.h */,
+				5E673D661CF84C19008304AC /* OFFileCell.m */,
+				5E673D671CF84C19008304AC /* OFFileCell.xib */,
 				5E4EA3391CF6954F00EE6764 /* OFFolderCell.h */,
 				5E4EA33A1CF6954F00EE6764 /* OFFolderCell.m */,
 				5E4EA33B1CF6954F00EE6764 /* OFFolderCell.xib */,
@@ -457,7 +457,7 @@
 				5E3BB3F21CF3EEFC006DC603 /* LaunchScreen.storyboard in Resources */,
 				5E0841F01CF5908500A47C63 /* demo.jpg in Resources */,
 				5E3BB3EF1CF3EEFC006DC603 /* Assets.xcassets in Resources */,
-				5E4EA3331CF694A300EE6764 /* OFDocCell.xib in Resources */,
+				5E673D691CF84C19008304AC /* OFFileCell.xib in Resources */,
 				5E3BB3EA1CF3EEFC006DC603 /* Main.storyboard in Resources */,
 				5E4EA3421CF6DD0C00EE6764 /* OFImagePickerController.xib in Resources */,
 				5ED435081CF6F03C00867059 /* OFImagePreviewController.xib in Resources */,
@@ -474,8 +474,8 @@
 			files = (
 				5E673D5E1CF841CA008304AC /* OFHistoryEntity.m in Sources */,
 				5ED435071CF6F03C00867059 /* OFImagePreviewController.m in Sources */,
-				5E4EA3321CF694A300EE6764 /* OFDocCell.m in Sources */,
 				5ED4350B1CF6FB0E00867059 /* Utils.m in Sources */,
+				5E673D681CF84C19008304AC /* OFFileCell.m in Sources */,
 				5E3BB4051CF3F1D9006DC603 /* OFBaseTableController.m in Sources */,
 				5E3BB4B31CF439CB006DC603 /* OFStartController.m in Sources */,
 				5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */,

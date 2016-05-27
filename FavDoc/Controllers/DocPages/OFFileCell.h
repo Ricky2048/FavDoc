@@ -1,14 +1,14 @@
 //
-//  OFDocCell.h
+//  OFFileCell.h
 //  FavDoc
 //
-//  Created by Ricky Lin on 16/5/26.
+//  Created by Ricky Lin on 16/5/27.
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface OFDocCell : UITableViewCell
+@interface OFFileCell : UITableViewCell
 {
     
     __weak IBOutlet UIImageView *_imageView;
@@ -20,15 +20,15 @@
     __weak IBOutlet UILabel *_detailLabel;
     
     __weak IBOutlet UIButton *_moreBtn;
-
+    
     __weak IBOutlet NSLayoutConstraint *_cs_typeLabel_left;
     
     __weak IBOutlet NSLayoutConstraint *_cs_detailLabel_left;
-
+    
     __weak IBOutlet NSLayoutConstraint *_cs_typeLabel_width;
-
+    
     __weak IBOutlet NSLayoutConstraint *_cs_nameLabel_left;
-
+    
     NSString *_path;
     NSString *_name;
     

@@ -9,7 +9,7 @@
 #import "OFMianController.h"
 
 #import "OFCatalogView.h"
-#import "OFDocCell.h"
+#import "OFFileCell.h"
 #import "OFFolderCell.h"
 #import "OFSelectOperationView.h"
 
@@ -228,7 +228,7 @@
         return cell;
     }
     
-    OFDocCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    OFFileCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
 
     NSArray *arr = _fileDic[keyFile];
     NSString *name = arr[indexPath.row];
