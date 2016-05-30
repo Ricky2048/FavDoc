@@ -43,6 +43,11 @@
 		5E673D641CF841CA008304AC /* OFUserEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D5C1CF841CA008304AC /* OFUserEntity.m */; };
 		5E673D681CF84C19008304AC /* OFFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D661CF84C19008304AC /* OFFileCell.m */; };
 		5E673D691CF84C19008304AC /* OFFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E673D671CF84C19008304AC /* OFFileCell.xib */; };
+		5ECB87241CFBE47A006A2595 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */; };
+		5ECB87261CFBE5B0006A2595 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */; };
+		5ECB87281CFBF2E9006A2595 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */; };
+		5ECB87311CFC2402006A2595 /* OFVideoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB872F1CFC2402006A2595 /* OFVideoPreviewController.m */; };
+		5ECB87321CFC2402006A2595 /* OFVideoPreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB87301CFC2402006A2595 /* OFVideoPreviewController.xib */; };
 		5ED435071CF6F03C00867059 /* OFImagePreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED435051CF6F03C00867059 /* OFImagePreviewController.m */; };
 		5ED435081CF6F03C00867059 /* OFImagePreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED435061CF6F03C00867059 /* OFImagePreviewController.xib */; };
 		5ED4350B1CF6FB0E00867059 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4350A1CF6FB0E00867059 /* Utils.m */; };
@@ -115,6 +120,12 @@
 		5E673D651CF84C19008304AC /* OFFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFileCell.h; sourceTree = "<group>"; };
 		5E673D661CF84C19008304AC /* OFFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFileCell.m; sourceTree = "<group>"; };
 		5E673D671CF84C19008304AC /* OFFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFileCell.xib; sourceTree = "<group>"; };
+		5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5ECB872E1CFC2402006A2595 /* OFVideoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFVideoPreviewController.h; sourceTree = "<group>"; };
+		5ECB872F1CFC2402006A2595 /* OFVideoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFVideoPreviewController.m; sourceTree = "<group>"; };
+		5ECB87301CFC2402006A2595 /* OFVideoPreviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFVideoPreviewController.xib; sourceTree = "<group>"; };
 		5ED435041CF6F03C00867059 /* OFImagePreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFImagePreviewController.h; sourceTree = "<group>"; };
 		5ED435051CF6F03C00867059 /* OFImagePreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFImagePreviewController.m; sourceTree = "<group>"; };
 		5ED435061CF6F03C00867059 /* OFImagePreviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFImagePreviewController.xib; sourceTree = "<group>"; };
@@ -127,6 +138,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECB87281CFBF2E9006A2595 /* AVFoundation.framework in Frameworks */,
+				5ECB87261CFBE5B0006A2595 /* MediaPlayer.framework in Frameworks */,
+				5ECB87241CFBE47A006A2595 /* MobileCoreServices.framework in Frameworks */,
 				5E4EA3441CF6E58400EE6764 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +198,7 @@
 		5E3BB3DE1CF3EEFC006DC603 /* FavDoc */ = {
 			isa = PBXGroup;
 			children = (
+				5E4EA3451CF6E59500EE6764 /* Framerwork */,
 				5E0841EE1CF5907D00A47C63 /* Images */,
 				5E3BB3FF1CF3F158006DC603 /* ThirdParts */,
 				5E3BB3FA1CF3F137006DC603 /* Datas */,
@@ -192,7 +207,6 @@
 				5E3BB3FE1CF3F137006DC603 /* Views */,
 				5E3BB3F91CF3F137006DC603 /* Controllers */,
 				5E3BB3DF1CF3EEFC006DC603 /* Supporting Files */,
-				5E4EA3451CF6E59500EE6764 /* Framerwork */,
 			);
 			path = FavDoc;
 			sourceTree = "<group>";
@@ -281,6 +295,9 @@
 				5ED435041CF6F03C00867059 /* OFImagePreviewController.h */,
 				5ED435051CF6F03C00867059 /* OFImagePreviewController.m */,
 				5ED435061CF6F03C00867059 /* OFImagePreviewController.xib */,
+				5ECB872E1CFC2402006A2595 /* OFVideoPreviewController.h */,
+				5ECB872F1CFC2402006A2595 /* OFVideoPreviewController.m */,
+				5ECB87301CFC2402006A2595 /* OFVideoPreviewController.xib */,
 			);
 			path = DocPages;
 			sourceTree = "<group>";
@@ -390,6 +407,9 @@
 		5E4EA3451CF6E59500EE6764 /* Framerwork */ = {
 			isa = PBXGroup;
 			children = (
+				5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */,
+				5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */,
+				5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */,
 				5E4EA3431CF6E58400EE6764 /* QuartzCore.framework */,
 			);
 			name = Framerwork;
@@ -454,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4EA33D1CF6954F00EE6764 /* OFFolderCell.xib in Resources */,
+				5ECB87321CFC2402006A2595 /* OFVideoPreviewController.xib in Resources */,
 				5E3BB3F21CF3EEFC006DC603 /* LaunchScreen.storyboard in Resources */,
 				5E0841F01CF5908500A47C63 /* demo.jpg in Resources */,
 				5E3BB3EF1CF3EEFC006DC603 /* Assets.xcassets in Resources */,
@@ -495,6 +516,7 @@
 				5E673D5F1CF841CA008304AC /* OFFavEntity+CoreDataProperties.m in Sources */,
 				5E4EA3411CF6DD0C00EE6764 /* OFImagePickerController.m in Sources */,
 				5E673D601CF841CA008304AC /* OFFavEntity.m in Sources */,
+				5ECB87311CFC2402006A2595 /* OFVideoPreviewController.m in Sources */,
 				5E673D5D1CF841CA008304AC /* OFHistoryEntity+CoreDataProperties.m in Sources */,
 				5E3BB4B91CF43AE3006DC603 /* PushNoAnimationSegue.m in Sources */,
 				5E673D621CF841CA008304AC /* OFBaseEntity.m in Sources */,

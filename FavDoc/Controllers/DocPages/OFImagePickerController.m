@@ -8,6 +8,16 @@
 
 #import "OFImagePickerController.h"
 
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
+
+typedef enum : NSUInteger {
+    OFMediaTypeImage,
+    OFMediaTypeMoive
+} OFMediaType;
+
+
 @interface OFImagePickerController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     
@@ -19,10 +29,14 @@
     
     __weak IBOutlet UISlider *_sizeSliderView;
     
+    // 图像输出
     UIImage *_photo;
     NSData *_photoData;
     
+    OFMediaType _mediaType;
     
+    // 视频输出
+    AVAssetExportSession *_exportSession;
 }
 @end
 
@@ -59,25 +73,62 @@
 
 - (IBAction)saveAction:(id)sender {
     
-    if (_photoData == nil) {
-        return;
-    }
     
     NSString *name = [Utils dateToString:[NSDate date]];
-    name = [name stringByAppendingPathExtension:@"jpg"];
-    
     NSString *path = [_folderPath stringByAppendingPathComponent:name];
-    
     NSString *fullPath = [OFDocHelper fullPath:path];
     
-    BOOL isOk = [[NSFileManager defaultManager] createFileAtPath:fullPath contents:_photoData attributes:nil];
+    if (_mediaType == OFMediaTypeImage) {
+        if (_photoData == nil) {
+            return;
+        }
+        
+        fullPath = [fullPath stringByAppendingPathExtension:@"jpg"];
+        
+        BOOL isOk = [[NSFileManager defaultManager] createFileAtPath:fullPath contents:_photoData attributes:nil];
+        
+        if (isOk == NO) {
+            NSLog(@"save image error!");
+            return;
+        }
+        [self backAction:nil];
+
+    }else {
+
+        if (_exportSession == nil) {
+            return;
+        }
+        
+        fullPath = [fullPath stringByAppendingPathExtension:@"mp4"];
+
+        _exportSession.outputURL = [NSURL fileURLWithPath:fullPath];
+        _exportSession.shouldOptimizeForNetworkUse = YES;
+        _exportSession.outputFileType = AVFileTypeMPEG4;
+        [_exportSession exportAsynchronouslyWithCompletionHandler:^{
+            switch ([_exportSession status]) {
+                case AVAssetExportSessionStatusFailed:
+                {
+                    NSLog(@"压缩转换错误");
+                    break;
+                }
+                    
+                case AVAssetExportSessionStatusCancelled:
+                    NSLog(@"压缩转换取消");
+                    
+                    break;
+                case AVAssetExportSessionStatusCompleted:
+                    NSLog(@"压缩转换成功");
+                    [self backAction:nil];
+
+                    break;
+                default:
+                    break;
+            }
+            
+        }];
     
-    if (isOk == NO) {
-        NSLog(@"save image error!");
-        return;
     }
     
-    [self backAction:nil];
     
 }
 
@@ -98,6 +149,8 @@
 }
 
 #pragma mark - Functions
+
+
 
 - (void)changePhotoSize
 {
@@ -157,6 +210,10 @@
     {
         //指定源的类型
         picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+
+        picker.mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage];
+        
+//        picker.cameraCaptureMode = UIImaxgePickerControllerCameraCaptureModeVideo;
         
         //在选定图片之前，用户可以简单编辑要选的图片。包括上下移动改变图片的选取范围，用手捏合动作改变图片的大小等。
         //picker.allowsEditing = YES;
@@ -199,6 +256,58 @@
         [self changePhotoSize];
 
     }];
+}
+
+// 设置后调用     picker.mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage];
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+        NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+        
+        NSLog([info description]);
+        
+        if([mediaType isEqualToString:(NSString *)kUTTypeMovie])
+        {
+            
+            _mediaType = OFMediaTypeMoive;
+            
+            NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
+//            NSLog(@"found a video url：%@",[videoURL absoluteString]);
+            //获取视频的thumbnail
+            MPMoviePlayerController *player = [[MPMoviePlayerController alloc]initWithContentURL:videoURL];
+            UIImage  *thumbnail = [player thumbnailImageAtTime:1.0 timeOption:MPMovieTimeOptionNearestKeyFrame];
+            
+            
+            _sliderView.enabled = YES;
+            _sizeSliderView.enabled = YES;
+            
+            _photoImageView.image = thumbnail;
+            
+            NSURL *url = info[UIImagePickerControllerMediaURL];
+            AVURLAsset *avAsset = [AVURLAsset URLAssetWithURL:url options:nil];
+            _exportSession = [[AVAssetExportSession alloc]initWithAsset:avAsset presetName:AVAssetExportPresetLowQuality];
+            
+        }
+        
+        if([mediaType isEqualToString:(NSString *)kUTTypeImage])
+        {
+            _mediaType = OFMediaTypeImage;
+
+            UIImage *image = info[UIImagePickerControllerOriginalImage];
+            _sliderView.enabled = YES;
+            _sizeSliderView.enabled = YES;
+            _sliderView.value = 1.0;
+            _sizeSliderView.value = 1.0;
+            
+            _photo = image;
+            
+            [self changePhotoSize];
+
+        }
+    }];
+
 }
 
 @end

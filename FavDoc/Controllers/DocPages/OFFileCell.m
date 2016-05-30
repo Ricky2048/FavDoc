@@ -8,6 +8,8 @@
 
 #import "OFFileCell.h"
 
+#import <MediaPlayer/MediaPlayer.h>
+
 @implementation OFFileCell
 
 - (void)awakeFromNib {
@@ -37,7 +39,7 @@
     
     NSString *filePath = [_path stringByAppendingPathComponent:_name];
     NSDictionary *dic = [[OFDocHelper shareInstance] getFlileInfoByPath:filePath];
-    //    NSLog([dic description]);
+//    NSLog([dic description]);
     
     NSNumber *fileSize = dic[NSFileSize];
     NSString *sizeStr = [OFDocHelper getFileSizeStr:fileSize];
@@ -81,7 +83,15 @@
         _cs_detailLabel_left.constant = 55;
         _cs_typeLabel_left.constant = 55;
         
-    }else {
+//    }else if (fileSize.unsignedIntegerValue > 0 && [extensionStr isEqualToString:@"MP4"]) {
+//        NSString *fullPath = [OFDocHelper fullPath:filePath];
+//
+//        MPMoviePlayerController *player = [[MPMoviePlayerController alloc]initWithContentURL:[NSURL URLWithString:fullPath]];
+//        UIImage  *thumbImage = [player thumbnailImageAtTime:1.0 timeOption:MPMovieTimeOptionNearestKeyFrame];
+//        _imageView.image = thumbImage;
+//        _cs_detailLabel_left.constant = 55;
+//        _cs_typeLabel_left.constant = 55;
+    } else {
         _imageView.image = nil;
         
         _cs_detailLabel_left.constant = 8;

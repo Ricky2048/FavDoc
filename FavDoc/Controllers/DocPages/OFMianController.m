@@ -15,6 +15,7 @@
 
 #import "OFImagePickerController.h"
 #import "OFImagePreviewController.h"
+#import "OFVideoPreviewController.h"
 
 @interface OFMianController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -250,16 +251,27 @@
         
         return;
     }
-    
-    NSArray *arr = _fileDic[keyFile];
 
+    NSArray *arr = _fileDic[keyFile];
     NSString *path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
+    NSString *ext = [path pathExtension];
     
-    OFImagePreviewController *vc = [[OFImagePreviewController alloc] initWithNibName:@"OFImagePreviewController" bundle:nil];
-    vc.filePath = path;
-    [self presentViewController:vc animated:YES completion:^{
+    if ([ext.uppercaseString isEqualToString:@"JPG"] || [ext.uppercaseString isEqualToString:@"PNG"]) {
         
-    }];
+        OFImagePreviewController *vc = [[OFImagePreviewController alloc] initWithNibName:@"OFImagePreviewController" bundle:nil];
+        vc.filePath = path;
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+    }else if ([ext.uppercaseString isEqualToString:@"MP4"]) {
+        OFVideoPreviewController *vc = [[OFVideoPreviewController alloc] initWithNibName:@"OFVideoPreviewController" bundle:nil];
+        vc.filePath = path;
+        [self presentViewController:vc animated:YES completion:^{
+            
+        }];
+        NSLog(@"mp4");
+    }
+    
 }
 
 
