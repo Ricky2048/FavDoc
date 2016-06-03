@@ -14,7 +14,7 @@
 #import "OFUserEntity.h"
 #import "OFHistoryEntity.h"
 
-#import "OFDataHelper.h"
+#import "OFCoreDataHelper.h"
 #import "OFDocHelper.h"
 
 #import "Global_CoreDate.h"

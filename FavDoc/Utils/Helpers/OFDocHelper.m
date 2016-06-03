@@ -60,6 +60,15 @@
             if (error) {
                 NSLog(@"creat demo pic error: %@",error);
             }
+            
+            NSString *fullDemoDir1 = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"mp4"];
+            NSString *fullDstDir1 = [OFDocHelper fullPath:@"demo.mp4"];
+            
+            NSError *error1;
+            [_fm copyItemAtPath:fullDemoDir1 toPath:fullDstDir1 error:&error1];
+            if (error1) {
+                NSLog(@"creat demo pic error: %@",error1);
+            }
         }
     }
     
@@ -184,7 +193,7 @@
     return [_fm fileExistsAtPath:fullPath];
 }
 
-#pragma mark - Other
+#pragma mark - +
 
 + (NSString *)getFileSizeStr:(NSNumber *)filesize
 {
@@ -225,6 +234,83 @@
     
     return fullPath;
     
+}
+
++ (void)addToFav:(NSString *)path
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"path == %@",path];
+    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableFav predicate:predicate];
+    
+    OFFavEntity *entity = results.lastObject;
+    if (entity == nil) {
+        
+        entity = [[OFCoreDataHelper shareInstance] insertToTable:kTableFav];
+        entity.path = path;
+        entity.name = [path lastPathComponent];
+    }
+    entity.collect_date = [NSDate date];
+    
+    [[OFCoreDataHelper shareInstance] saveContext:kTableFav];
+}
+
++ (void)addToHistory:(NSString *)path
+{
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"path == %@",path];
+    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableHistory predicate:predicate];
+    
+    OFHistoryEntity *entity = results.firstObject;
+    
+    if (entity == nil) {
+        
+        entity = [[OFCoreDataHelper shareInstance] insertToTable:kTableHistory];
+        entity.path = path;
+        entity.name = [path lastPathComponent];
+    }
+    entity.last_open = [NSDate date];
+    
+    [[OFCoreDataHelper shareInstance] saveContext:kTableHistory];
+}
+
++ (NSArray *)getHistoryList:(NSInteger)maxNum
+{
+    
+    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableHistory];
+    
+    if (results.count > maxNum) {
+        results  = [results subarrayWithRange:NSMakeRange(0, maxNum)];
+    }
+    return results;
+}
+
++ (NSArray *)getFavList:(NSInteger)maxNum
+{
+    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableFav];
+    
+    if (results.count > maxNum) {
+        results  = [results subarrayWithRange:NSMakeRange(0, maxNum)];
+    }
+    return results;
+}
+
++ (BOOL)isFav:(NSString *)path
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"path == %@",path];
+    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableFav predicate:predicate];
+    if (results.count >0) {
+        return YES;
+    }
+    return NO;
+}
+
++ (void)deleteFav:(NSString *)path
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"path == %@",path];
+    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableFav predicate:predicate];
+
+    for (OFFavEntity *entity in results) {
+        [[OFCoreDataHelper shareInstance] deleteObject:entity];
+    }
 }
 
 @end

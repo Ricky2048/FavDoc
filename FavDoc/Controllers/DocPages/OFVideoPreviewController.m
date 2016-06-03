@@ -12,8 +12,10 @@
 
 @interface OFVideoPreviewController ()
 {
-    MPMoviePlayerController *_player;
     
+    __weak IBOutlet UIView *_playerView;
+    
+    MPMoviePlayerController *_player;
 }
 @end
 
@@ -23,40 +25,51 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    NSURL *url = [[NSURL alloc] initWithString:[OFDocHelper fullPath:_filePath]];
+    [OFDocHelper addToHistory:_filePath];
+    
+    NSString *fullPath = [OFDocHelper fullPath:_filePath];
+    NSURL *url = [NSURL fileURLWithPath:fullPath];
+  
+    _player =[[MPMoviePlayerController alloc] initWithContentURL:url];
+    [_player prepareToPlay];
+    _player.shouldAutoplay=YES;
+    [_player setControlStyle:MPMovieControlStyleDefault];
+    [_player play];
 
-    
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"demo" withExtension:@"mp4"];
-    
-    MPMoviePlayerController *movewController =[[MPMoviePlayerController alloc] initWithContentURL:url];
-    
-    [movewController prepareToPlay];
-    
-    [self.view addSubview:movewController.view];//设置写在添加之后   // 这里是addSubView
-    
-    movewController.shouldAutoplay=YES;
-    
-    [movewController setControlStyle:MPMovieControlStyleDefault];
-    
-    [movewController setFullscreen:YES];
-    
-    [movewController.view setFrame:CGRectMake(100, 100, 200, 200)];
-    
-    [movewController play];
-    
-//    这里注册相关操作的通知
-    
+    // 注册相关操作的通知
     [[NSNotificationCenter defaultCenter] addObserver:self
-     
                                              selector:@selector(movieFinishedCallback:)
-     
                                                  name:MPMoviePlayerPlaybackDidFinishNotification
-     
-                                               object:movewController]; //播放完后的通知
+                                               object:_player]; //播放完后的通知
+    
+    [_playerView addSubview:_player.view];
+
     
 
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+//    UIView *view1 = [[UIView alloc] init];
+////    view1.frame = CGRectMake(0, 0, 200, 200);
+//    view1.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:view1];
+//    NSArray *constraints1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[view1]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(view1)];
+//    NSArray *constraints2 = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[view1]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(view1)];
+//    
+//    [self.view addConstraints:constraints1];
+//    [self.view addConstraints:constraints2];
+    
+}
+
+
+- (void)viewDidLayoutSubviews
+{
+    _player.view.frame = _playerView.bounds;
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

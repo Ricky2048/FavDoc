@@ -1,24 +1,29 @@
 //
-//  OFBaseController.m
+//  OFMoreController.m
 //  FavDoc
 //
-//  Created by Ricky Lin on 16/5/24.
+//  Created by Ricky Lin on 16/6/3.
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 
-#import "OFBaseController.h"
+#import "OFMoreController.h"
 
-@interface OFBaseController ()
+@interface OFMoreController ()
 
 @end
 
-@implementation OFBaseController
+@implementation OFMoreController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+    self.tabBarController.title = @"More";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,10 +31,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)updateData
-{
-    
-}
 /*
 #pragma mark - Navigation
 

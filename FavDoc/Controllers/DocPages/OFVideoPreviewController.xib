@@ -3,10 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OFVideoPreviewController">
             <connections>
+                <outlet property="_playerView" destination="1rc-qy-pM2" id="We0-iy-dy1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,13 +36,24 @@
                         <barButtonItem title="操作" id="kyx-Vg-5wl"/>
                     </items>
                 </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rc-qy-pM2">
+                    <rect key="frame" x="0.0" y="64" width="600" height="400"/>
+                    <color key="backgroundColor" red="0.22110146119999999" green="0.94340351300000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="1rc-qy-pM2" secondAttribute="height" multiplier="3:2" id="yYG-Ld-21L"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="VPr-oL-Fxf" secondAttribute="trailing" id="OmI-2c-kWn"/>
                 <constraint firstItem="VPr-oL-Fxf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PiN-DT-fni"/>
+                <constraint firstItem="1rc-qy-pM2" firstAttribute="top" secondItem="VPr-oL-Fxf" secondAttribute="bottom" id="TuH-Yf-jFR"/>
                 <constraint firstItem="VPr-oL-Fxf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="YIH-kx-bqO"/>
+                <constraint firstAttribute="trailing" secondItem="1rc-qy-pM2" secondAttribute="trailing" id="bbf-AX-TdM"/>
+                <constraint firstItem="1rc-qy-pM2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cEf-n4-NSL"/>
             </constraints>
+            <point key="canvasLocation" x="251" y="441"/>
         </view>
     </objects>
 </document>

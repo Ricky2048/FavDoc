@@ -39,9 +39,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.tabBarController.title = @"Main";
+
     _fileDic = @{keyPath:@"/",keyFolder:@[],keyFile:@[]};
 
-    __weak OFMianController *weakSelf = self;
+    __weak __typeof__(self) weakSelf = self;
     
     [_catalogView addSelectBlock:^(NSString *dir) {
         
@@ -269,7 +271,7 @@
         [self presentViewController:vc animated:YES completion:^{
             
         }];
-        NSLog(@"mp4");
+//        NSLog(@"mp4");
     }
     
 }

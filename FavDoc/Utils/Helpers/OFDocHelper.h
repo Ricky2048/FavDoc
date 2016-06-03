@@ -24,8 +24,23 @@
 
 - (BOOL)copyItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath;
 
+
+#pragma mark - +
+
 + (NSString *)getFileSizeStr:(NSNumber *)filesize;
 
 + (NSString *)fullPath:(NSString *)path;
+
++ (void)addToFav:(NSString *)path;
+
++ (void)addToHistory:(NSString *)path;
+
++ (NSArray *)getHistoryList:(NSInteger)maxNum;
+
++ (NSArray *)getFavList:(NSInteger)maxNum;
+
++ (BOOL)isFav:(NSString *)path;
+
++ (void)deleteFav:(NSString *)path;
 
 @end

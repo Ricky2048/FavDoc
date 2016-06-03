@@ -99,6 +99,15 @@
     }
     
     _detailLabel.text = detailStr;
+    
+    // 判断是否已经收藏
+
+    if ([OFDocHelper isFav:filePath]) {
+        [_moreBtn setTitle:@"★" forState:UIControlStateNormal];
+    }else {
+        [_moreBtn setTitle:@"☆" forState:UIControlStateNormal];
+    }
+
 }
 
 - (NSString *)getDateStr:(NSDate *)date
@@ -107,24 +116,16 @@
 }
 - (IBAction)moreAction:(id)sender {
     
-    [self addToFav:[_path stringByAppendingPathComponent:_name]];
-}
+    NSString *filePath = [_path stringByAppendingPathComponent:_name];
 
-- (void)addToFav:(NSString *)path
-{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"path == %@",path];
-    NSArray *results = [[OFDataHelper shareInstance] fetcthTable:kTableFav predicate:predicate];
-    
-    OFFavEntity *entity = results.lastObject;
-    if (entity == nil) {
-        
-        entity = [[OFDataHelper shareInstance] insertToTable:kTableFav];
-        entity.path = path;
-        entity.name = [path lastPathComponent];
+    if (![OFDocHelper isFav:filePath]) {
+        [OFDocHelper addToFav:filePath];
+        [_moreBtn setTitle:@"★" forState:UIControlStateNormal];
+    }else {
+        [OFDocHelper deleteFav:filePath];
+        [_moreBtn setTitle:@"☆" forState:UIControlStateNormal];
     }
-    entity.collect_date = [NSDate date];
     
 }
-
 
 @end
