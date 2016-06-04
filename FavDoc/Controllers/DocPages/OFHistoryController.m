@@ -24,9 +24,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.tabBarController.title = @"History";
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
     _historyList = @[];
 
     
@@ -34,6 +34,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+
+    self.tabBarController.title = @"History";
+
     [self updateData];
 
 }

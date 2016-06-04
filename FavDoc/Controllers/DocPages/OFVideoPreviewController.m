@@ -13,6 +13,7 @@
 @interface OFVideoPreviewController ()
 {
     
+    
     __weak IBOutlet UIView *_playerView;
     
     MPMoviePlayerController *_player;

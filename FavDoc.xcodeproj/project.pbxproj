@@ -150,6 +150,7 @@
 		5EAD52401D017C0A00BE0553 /* OFMoreController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFMoreController.xib; sourceTree = "<group>"; };
 		5EAD52431D0181CF00BE0553 /* OFCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFCoreDataHelper.h; sourceTree = "<group>"; };
 		5EAD52441D0181CF00BE0553 /* OFCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFCoreDataHelper.m; sourceTree = "<group>"; };
+		5EAD52461D031B4700BE0553 /* Global_constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global_constant.h; sourceTree = "<group>"; };
 		5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -385,6 +386,7 @@
 			children = (
 				5E3BB4A61CF42D8D006DC603 /* Global_CoreDate.h */,
 				5E3BB4B01CF43966006DC603 /* Global_Segue.h */,
+				5EAD52461D031B4700BE0553 /* Global_constant.h */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
