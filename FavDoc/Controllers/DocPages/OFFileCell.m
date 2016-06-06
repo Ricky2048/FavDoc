@@ -42,16 +42,13 @@
 //    NSLog([dic description]);
     
     NSNumber *fileSize = dic[NSFileSize];
-    NSString *sizeStr = [OFDocHelper getFileSizeStr:fileSize];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
+    NSString *sizeStr = [Utils getFileSizeStr:fileSize];
+
     NSDate *fileCreateDate = dic[NSFileCreationDate];
-    NSString *createStr = [formatter stringFromDate:fileCreateDate];
+    NSString *createStr = [Utils getTimeOffDateStr:fileCreateDate];
     
     NSDate *fileModifyDate = dic[NSFileCreationDate];
-    NSString *modifyStr = [formatter stringFromDate:fileModifyDate];
+    NSString *modifyStr = [Utils getTimeOffDateStr:fileModifyDate];
     
     NSString *extensionStr = [name pathExtension].uppercaseString;
     

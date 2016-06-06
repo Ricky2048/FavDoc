@@ -11,6 +11,9 @@
 
 @interface Utils : NSObject
 
+// 生成32位MD5
++ (NSString *)Md5:(NSString *)str;
+
 // 随机产生 num 位字符串
 + (NSString *)randomString:(NSInteger)num;
 
@@ -23,5 +26,9 @@
 // 等比压缩size的大小
 + (UIImage *)thumbnailWithImageWithoutScale:(UIImage *)image size:(CGSize)asize;
 
+// 返回字符串大小比如 1.1M 100.8K
++ (NSString *)getFileSizeStr:(NSNumber *)filesize;
+
++ (NSString *)getTimeOffDateStr:(NSDate *)date;
 
 @end

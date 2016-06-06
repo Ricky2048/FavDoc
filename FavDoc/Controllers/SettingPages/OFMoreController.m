@@ -8,8 +8,11 @@
 
 #import "OFMoreController.h"
 
-@interface OFMoreController ()
-
+@interface OFMoreController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSArray *_dataSource;
+    
+}
 @end
 
 @implementation OFMoreController

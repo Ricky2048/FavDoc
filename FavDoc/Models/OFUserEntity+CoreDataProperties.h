@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OFUserEntity (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSDate *date_latest_login;
 @property (nullable, nonatomic, retain) NSString *email;
 @property (nullable, nonatomic, retain) NSString *mobile;
 @property (nullable, nonatomic, retain) NSString *name;

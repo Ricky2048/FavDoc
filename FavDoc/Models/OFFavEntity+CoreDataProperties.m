@@ -13,7 +13,7 @@
 
 @implementation OFFavEntity (CoreDataProperties)
 
-@dynamic collect_date;
+@dynamic date;
 @dynamic name;
 @dynamic path;
 @dynamic remark_color;

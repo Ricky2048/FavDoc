@@ -37,7 +37,7 @@
     
     if (_filePath) {
         NSString *fullPath = [OFDocHelper fullPath:_filePath];
-        NSLog(fullPath);
+//        NSLog(fullPath);
         UIImage *image = [UIImage imageWithContentsOfFile:fullPath];
         
         if ([image isKindOfClass:[UIImage class]]) {
@@ -49,6 +49,9 @@
     [self addGestureRecognizerToView:_imageView];
     
     [OFDocHelper addToHistory:_filePath];
+    
+    _toolBar.alpha = 0;
+
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -62,6 +65,18 @@
     
     _imageViewSize = CGSizeMake(_imageSize.width*scale, _imageSize.height*scale);
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

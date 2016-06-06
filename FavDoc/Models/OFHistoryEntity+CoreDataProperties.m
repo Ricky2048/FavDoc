@@ -13,7 +13,7 @@
 
 @implementation OFHistoryEntity (CoreDataProperties)
 
-@dynamic last_open;
+@dynamic date;
 @dynamic name;
 @dynamic path;
 @dynamic history_id;

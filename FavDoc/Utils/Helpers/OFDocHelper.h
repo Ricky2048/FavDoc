@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define mainDirName @"/根目录"
+
 #define keyFolder @"folder"
 #define keyFile @"files"
 #define keyPath @"path"
@@ -24,11 +26,14 @@
 
 - (BOOL)copyItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath;
 
+- (BOOL)deleteItemAtPath:(NSString *)path;
 
 #pragma mark - +
 
-+ (NSString *)getFileSizeStr:(NSNumber *)filesize;
+// 前面加了一个根目录
++ (NSString *)inMainPath:(NSString *)path;
 
+// 获得绝对路径
 + (NSString *)fullPath:(NSString *)path;
 
 + (void)addToFav:(NSString *)path;
@@ -42,5 +47,7 @@
 + (BOOL)isFav:(NSString *)path;
 
 + (void)deleteFav:(NSString *)path;
+
++ (void)deleteFavByDir:(NSString *)path;
 
 @end

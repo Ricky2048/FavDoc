@@ -35,11 +35,8 @@
 //    NSNumber *fileSize = dic[NSFileSize];
 //    NSString *sizeStr = [self getFileSizeStr:fileSize];
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
     NSDate *fileCreateDate = dic[NSFileCreationDate];
-    NSString *createStr = [formatter stringFromDate:fileCreateDate];
+    NSString *createStr = [Utils getTimeOffDateStr:fileCreateDate];
     
 //    NSDate *fileModifyDate = dic[NSFileCreationDate];
 //    NSString *modifyStr = [formatter stringFromDate:fileModifyDate];

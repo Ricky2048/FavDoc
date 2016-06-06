@@ -25,7 +25,9 @@
 {
     self.textLabel.text = [entity.path lastPathComponent];
     
-    self.detailTextLabel.text = [entity.path stringByDeletingLastPathComponent];
+    NSString *detailStr = [NSString stringWithFormat:@"%@(%@)",[Utils getTimeOffDateStr:entity.date],[OFDocHelper inMainPath:[entity.path stringByDeletingLastPathComponent]]];
+    
+    self.detailTextLabel.text = detailStr;
 }
 
 @end

@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OFHistoryEntity (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSDate *last_open;
+@property (nullable, nonatomic, retain) NSDate *date;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *path;
 @property (nullable, nonatomic, retain) NSNumber *history_id;

@@ -20,7 +20,7 @@
         _maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
         [self addSubview:_maskView];
         
-        _dataSource = @[@"新建文件夹",@"新增图片",@"清空目录",@"移动目录"];
+        _dataSource = @[@"新建文件夹",@"新增图片/视频",@"清空目录",@"移动目录"];
         
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(point.x, point.y, widthOfView, hightOfRow*numOfRow)];
         _tableView.delegate = self;

@@ -38,13 +38,26 @@
 
 - (NSArray *)fetcthTable:(NSString *)tName predicate:(NSPredicate *)predicate
 {
+    return [self fetcthTable:tName predicate:predicate sortDescriptors:nil];
+}
+
+- (NSArray *)fetcthTable:(NSString *)tName sortOption:(NSArray *)sortDescriptors
+{
+    return [self fetcthTable:tName predicate:nil sortDescriptors:sortDescriptors];
+}
+
+- (NSArray *)fetcthTable:(NSString *)tName predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors
+{
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     [request setEntity:[NSEntityDescription entityForName:tName inManagedObjectContext:[self managedObjectContext]]];
     
     if (predicate) {
-        
         [request setPredicate:predicate];
+    }
+    
+    if (sortDescriptors) {
+        [request setSortDescriptors:sortDescriptors];
     }
     
     NSError *error = nil;
@@ -61,6 +74,8 @@
 - (void)deleteObject:(NSManagedObject *)entity
 {
     [_managedObjectContext deleteObject:entity];
+    
+    [self saveContext];
 }
 
 #pragma mark - Core Data stack
@@ -142,7 +157,7 @@
 
 - (void)saveContext:(NSString *)currectObject{
     
-    NSLog(@"save %@",currectObject);
+//    NSLog(@"save %@",currectObject);
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         NSError *error = nil;

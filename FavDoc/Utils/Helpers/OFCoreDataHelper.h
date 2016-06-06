@@ -22,6 +22,8 @@
 
 - (NSArray *)fetcthTable:(NSString *)tName;
 - (NSArray *)fetcthTable:(NSString *)tName predicate:(NSPredicate *)predicate;
+- (NSArray *)fetcthTable:(NSString *)tName sortOption:(NSArray *)sortDescriptors;
+- (NSArray *)fetcthTable:(NSString *)tName predicate:(NSPredicate *)predicate sortDescriptors:(NSArray *)sortDescriptors;
 
 - (void)deleteObject:(NSManagedObject *)entity;
 

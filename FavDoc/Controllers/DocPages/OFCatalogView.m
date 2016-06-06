@@ -8,7 +8,6 @@
 
 #import "OFCatalogView.h"
 
-#define mainDirName @"/根目录"
 
 @interface OFCatalogView()<UITextViewDelegate>
 {

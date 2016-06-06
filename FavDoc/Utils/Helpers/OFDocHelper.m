@@ -162,6 +162,38 @@
     return YES;
 }
 
+- (BOOL)deleteItemAtPath:(NSString *)path
+{
+    NSError *error;
+    BOOL isDir;
+    
+    if ([self fileExistsAtPath:path isDir:&isDir]) {
+        
+        NSString *fullPath = [_mainPath stringByAppendingPathComponent:path];
+        
+        [_fm removeItemAtPath:fullPath error:&error];
+        
+        // 移除收藏相关项目
+        if (isDir) {
+            [OFDocHelper deleteFavByDir:path];
+        }else {
+            [OFDocHelper deleteFav:path];
+        }
+        
+    }else {
+        NSLog(@"delete item but path wrong!");
+        
+        return NO;
+    }
+    
+    if (error) {
+        NSLog(@"delete item error: %@",error);
+        return NO;
+        
+    }
+    return YES;
+}
+
 - (BOOL)createDirectoryAtPath:(NSString *)path
 {
     NSError *error;
@@ -187,45 +219,35 @@
 
 - (BOOL)fileExistsAtPath:(NSString *)path
 {
+    BOOL isDir;
+    
+    return [self fileExistsAtPath:path isDir:&isDir];
+}
+
+- (BOOL)fileExistsAtPath:(NSString *)path isDir:(BOOL *)isDir
+{
     
     NSString *fullPath = [_mainPath stringByAppendingPathComponent:path];
     
-    return [_fm fileExistsAtPath:fullPath];
+    BOOL isExist = [_fm fileExistsAtPath:fullPath isDirectory:isDir];
+    
+    return isExist;
 }
 
 #pragma mark - +
-
-+ (NSString *)getFileSizeStr:(NSNumber *)filesize
++ (NSString *)inMainPath:(NSString *)path
 {
-    NSInteger intSize = filesize.integerValue;
     
-    float kSize = intSize/1000.0;
-    if (kSize < 1) {
-        return [NSString stringWithFormat:@"%ldB",intSize];
-    }
+    NSString *inMainPath = [mainDirName stringByAppendingPathComponent:path];
     
-    float mSize = kSize/1000.0;
-    if (mSize < 1) {
-        return [NSString stringWithFormat:@"%.1fK",kSize];
-    }
-    
-    float gSize = mSize/1000.0;
-    if (gSize < 1) {
-        return [NSString stringWithFormat:@"%.1fM",mSize];
-    }
-    
-    float tSize = gSize/1000.0;
-    if (tSize < 1) {
-        return [NSString stringWithFormat:@"%.1fG",gSize];
-    }
-    
-    return [NSString stringWithFormat:@"%.1fT",tSize];
+    return inMainPath;
 }
 
 + (NSString *)fullPath:(NSString *)path
 {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
     NSString *docDir = [paths objectAtIndex:0];
 
     NSString *mainPath = [docDir stringByAppendingPathComponent:MainFolder];
@@ -248,7 +270,7 @@
         entity.path = path;
         entity.name = [path lastPathComponent];
     }
-    entity.collect_date = [NSDate date];
+    entity.date = [NSDate date];
     
     [[OFCoreDataHelper shareInstance] saveContext:kTableFav];
 }
@@ -267,15 +289,18 @@
         entity.path = path;
         entity.name = [path lastPathComponent];
     }
-    entity.last_open = [NSDate date];
+    entity.date = [NSDate date];
     
     [[OFCoreDataHelper shareInstance] saveContext:kTableHistory];
 }
 
 + (NSArray *)getHistoryList:(NSInteger)maxNum
 {
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"date" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor,nil];
     
-    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableHistory];
+    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableHistory sortOption:sortDescriptors];
     
     if (results.count > maxNum) {
         results  = [results subarrayWithRange:NSMakeRange(0, maxNum)];
@@ -313,4 +338,17 @@
     }
 }
 
++ (void)deleteFavByDir:(NSString *)path
+{
+    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableFav];
+    
+    for (OFFavEntity *entity in results) {
+        
+        NSRange range = [entity.path rangeOfString:path];
+        
+        if (range.location == 0 && range.length > 0) {
+            [[OFCoreDataHelper shareInstance] deleteObject:entity];
+        }
+    }
+}
 @end

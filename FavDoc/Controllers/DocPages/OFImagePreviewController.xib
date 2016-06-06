@@ -28,7 +28,7 @@
                     </constraints>
                 </imageView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzV-0q-75t">
-                    <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="yO0-Ww-uW4"/>
@@ -60,11 +60,13 @@
                 <constraint firstItem="CzV-0q-75t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Klk-Bn-YvQ"/>
                 <constraint firstAttribute="trailing" secondItem="CzV-0q-75t" secondAttribute="trailing" id="MoH-7Z-A0f"/>
                 <constraint firstItem="zH2-Wy-gOn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OAm-wM-yHY"/>
-                <constraint firstItem="CzV-0q-75t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="b4M-QZ-KhH"/>
+                <constraint firstItem="CzV-0q-75t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b4M-QZ-KhH"/>
                 <constraint firstAttribute="trailing" secondItem="zH2-Wy-gOn" secondAttribute="trailing" constant="40" id="cLu-1B-iD1"/>
                 <constraint firstItem="zH2-Wy-gOn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lUc-SO-2lz"/>
                 <constraint firstItem="zH2-Wy-gOn" firstAttribute="top" secondItem="CzV-0q-75t" secondAttribute="bottom" constant="20" id="sqq-bP-LHs"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="8gn-iw-Lvq"/>
@@ -73,6 +75,7 @@
                     <exclude reference="sqq-bP-LHs"/>
                 </mask>
             </variation>
+            <point key="canvasLocation" x="124" y="296"/>
         </view>
     </objects>
     <resources>

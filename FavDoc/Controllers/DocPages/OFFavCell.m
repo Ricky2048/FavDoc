@@ -25,7 +25,7 @@
 {
     self.textLabel.text = [entity.path lastPathComponent];
     
-    self.detailTextLabel.text = [entity.path stringByDeletingLastPathComponent];
+    self.detailTextLabel.text = [OFDocHelper inMainPath:[entity.path stringByDeletingLastPathComponent]];
 }
 
 @end

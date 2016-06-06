@@ -168,7 +168,7 @@ typedef enum : NSUInteger {
     
     NSUInteger dataSize = _photoData.length;
     NSNumber *sizeNumber = [NSNumber numberWithUnsignedInteger:dataSize];
-    NSString *sizeStr = [OFDocHelper getFileSizeStr:sizeNumber];
+    NSString *sizeStr = [Utils getFileSizeStr:sizeNumber];
     _detailLabel.text = [NSString stringWithFormat:@"文件大小:%@ 压缩比:%.2f 尺寸:%.0fx%.0f",sizeStr,scale,image.size.width,image.size.height];
 }
 
@@ -183,6 +183,8 @@ typedef enum : NSUInteger {
         //指定源的类型
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         
+        picker.mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage];
+
         //在选定图片之前，用户可以简单编辑要选的图片。包括上下移动改变图片的选取范围，用手捏合动作改变图片的大小等。
         //picker.allowsEditing = YES;
         
@@ -266,7 +268,7 @@ typedef enum : NSUInteger {
         
         NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
         
-        NSLog([info description]);
+//        NSLog([info description]);
         
         if([mediaType isEqualToString:(NSString *)kUTTypeMovie])
         {
@@ -279,9 +281,8 @@ typedef enum : NSUInteger {
             MPMoviePlayerController *player = [[MPMoviePlayerController alloc]initWithContentURL:videoURL];
             UIImage  *thumbnail = [player thumbnailImageAtTime:1.0 timeOption:MPMovieTimeOptionNearestKeyFrame];
             
-            
-            _sliderView.enabled = YES;
-            _sizeSliderView.enabled = YES;
+            _sliderView.enabled = NO;
+            _sizeSliderView.enabled = NO;
             
             _photoImageView.image = thumbnail;
             

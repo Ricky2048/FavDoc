@@ -24,6 +24,10 @@
     
     __weak IBOutlet OFCatalogView *_catalogView;
     
+    __weak IBOutlet UIButton *_leftButton;
+    
+    __weak IBOutlet UIButton *_rightButton;
+    
 }
 
 @property (nonatomic, strong) NSDictionary *fileDic;
@@ -39,7 +43,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.tabBarController.title = @"Main";
+    self.tabBarController.title = @"";
 
     _fileDic = @{keyPath:@"/",keyFolder:@[],keyFile:@[]};
 
@@ -167,6 +171,12 @@
         
         [_tableView reloadData];
         
+        if ([_fileDic[keyPath] isEqualToString:@"/"]) {
+            _leftButton.enabled = NO;
+        }else {
+            _leftButton.enabled = YES;
+        }
+        
     }}
 
 - (void)updateData
@@ -262,13 +272,13 @@
         
         OFImagePreviewController *vc = [[OFImagePreviewController alloc] initWithNibName:@"OFImagePreviewController" bundle:nil];
         vc.filePath = path;
-        [self presentViewController:vc animated:YES completion:^{
+        [self presentViewController:vc animated:NO completion:^{
             
         }];
     }else if ([ext.uppercaseString isEqualToString:@"MP4"]) {
         OFVideoPreviewController *vc = [[OFVideoPreviewController alloc] initWithNibName:@"OFVideoPreviewController" bundle:nil];
         vc.filePath = path;
-        [self presentViewController:vc animated:YES completion:^{
+        [self presentViewController:vc animated:NO completion:^{
             
         }];
 //        NSLog(@"mp4");
@@ -277,4 +287,42 @@
 }
 
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    
+    if (indexPath.section == 0 ) {
+        NSArray *arr = _fileDic[keyFolder];
+        NSString *path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
+        if ([path isEqualToString:@"/Videos"]||[path isEqualToString:@"/Pictures"]) {
+            return NO;
+        }
+    }
+    return YES;
+    
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        
+        NSString *path;
+        
+        if (indexPath.section == 0) {
+            NSArray *arr = _fileDic[keyFolder];
+            path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
+        }
+        if (indexPath.section == 1) {
+            NSArray *arr = _fileDic[keyFile];
+            path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
+        }
+        if ([[OFDocHelper shareInstance] deleteItemAtPath:path]) {
+            [self updateData];
+        }
+        
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
+ 
 @end

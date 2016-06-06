@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OFFavEntity (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSDate *collect_date;
+@property (nullable, nonatomic, retain) NSDate *date;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *path;
 @property (nullable, nonatomic, retain) NSNumber *remark_color;

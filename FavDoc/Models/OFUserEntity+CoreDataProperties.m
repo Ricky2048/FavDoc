@@ -13,7 +13,6 @@
 
 @implementation OFUserEntity (CoreDataProperties)
 
-@dynamic date_latest_login;
 @dynamic email;
 @dynamic mobile;
 @dynamic name;
