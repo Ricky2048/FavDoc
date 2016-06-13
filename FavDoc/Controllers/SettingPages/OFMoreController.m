@@ -54,6 +54,7 @@
 - (void)setData
 {
     _dataSource = @[@"访问密码",
+                    @"切换皮肤",
                     @"使用统计",
                     @"历史记录",
                     @"收藏夹",
@@ -62,7 +63,8 @@
                     @"联系作者",
                     @"重置所有内容"];
     
-    _imageSource = @[@"icon_secret_28",
+    _imageSource = @[@"icon_lock_28",
+                     @"iocn_clouth_28",
                      @"icon_statistic_28",
                      @"icon_history_28",
                      @"icon_fav_28",
@@ -100,6 +102,9 @@
 
     if ([text isEqualToString:@"访问密码"]) {
         cell.detailTextLabel.text = @"未开启";
+    }
+    if ([text isEqualToString:@"切换皮肤"]) {
+        cell.detailTextLabel.text = @"默认皮肤";
     }
     if ([text isEqualToString:@"使用统计"]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
