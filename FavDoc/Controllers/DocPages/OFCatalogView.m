@@ -51,7 +51,7 @@
     
     if (self) {
       
-
+        
     }
     
     return self;
@@ -60,6 +60,9 @@
 
 - (void)awakeFromNib
 {
+    [_backBtn setTintColor:kColorTabBarTint];
+    [_operateBtn setTintColor:kColorTabBarTint];
+    
     _pathTextView.delegate = self;
     _pathTextView.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5);
     _pathTextView.textContainer.lineFragmentPadding = 0;

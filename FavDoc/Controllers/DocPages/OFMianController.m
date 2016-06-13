@@ -22,6 +22,8 @@
     
     __weak IBOutlet UITableView *_tableView;
     
+    __weak IBOutlet UIView *_topBgView;
+    
     __weak IBOutlet OFCatalogView *_catalogView;
     
     __weak IBOutlet UIButton *_leftButton;
@@ -42,6 +44,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    _topBgView.backgroundColor = kColorNavBg;
+    _catalogView.backgroundColor = kColorNavBg;
     
     self.tabBarController.title = @"";
 
@@ -109,16 +114,9 @@
 {
     [super viewWillAppear:animated];
     
-    [self.tabBarController.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.tabBarController.navigationController setNavigationBarHidden:YES animated:NO];
     
     [self updateData];
-
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
 
 }
 
@@ -126,7 +124,7 @@
 {
     [super viewWillDisappear:animated];
     
-    [self.tabBarController.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.tabBarController.navigationController setNavigationBarHidden:NO animated:NO];
 
     _maskView.hidden = YES;
 }

@@ -20,6 +20,7 @@
 #import "Global_CoreDate.h"
 #import "Global_Segue.h"
 #import "Global_constant.h"
+#import "Global_Color.h"
 
 #import "Utils.h"
 

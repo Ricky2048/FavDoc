@@ -29,7 +29,7 @@
 {
     [super viewWillAppear:animated];
     
-    self.tabBarController.title = @"Favourites";
+    self.tabBarController.title = @"收藏夹";
     
     [self updateData];
 }

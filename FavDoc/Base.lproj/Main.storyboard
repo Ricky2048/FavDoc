@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -55,12 +55,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R6k-4W-qLC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="R6k-4W-qLC">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="w97-8O-nDd" detailTextLabel="dEc-d2-Hy4" style="IBUITableViewCellStyleValue1" id="aaN-jC-Xm7">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aaN-jC-Xm7" id="7vi-PH-rFQ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -70,7 +71,7 @@
                                                     <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dEc-d2-Hy4">
@@ -84,6 +85,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="urQ-jc-kxM" id="Ykx-PD-uCL"/>
+                                    <outlet property="delegate" destination="urQ-jc-kxM" id="peL-hd-rSK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,7 +99,10 @@
                             <constraint firstItem="R6k-4W-qLC" firstAttribute="leading" secondItem="bAU-RF-Tqb" secondAttribute="leading" id="hVd-2S-cgv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="r8c-Hf-TZq"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="bar_set_28" selectedImage="bar_set_h_28" id="r8c-Hf-TZq"/>
+                    <connections>
+                        <outlet property="_tableView" destination="R6k-4W-qLC" id="F98-IX-sjB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yy8-BR-f4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,7 +136,7 @@
                                                     <rect key="frame" x="60" y="9" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="67m-AJ-ZkB">
@@ -160,7 +168,7 @@
                             <constraint firstAttribute="trailing" secondItem="U43-4X-O4R" secondAttribute="trailing" id="tof-Hm-Qje"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="tUo-vy-vt9"/>
+                    <tabBarItem key="tabBarItem" title="收藏夹" image="bar_fav_28" selectedImage="bar_fav_h_28" id="tUo-vy-vt9"/>
                     <connections>
                         <outlet property="_tableView" destination="U43-4X-O4R" id="inw-4h-oBC"/>
                     </connections>
@@ -197,7 +205,7 @@
                                                     <rect key="frame" x="60" y="6" width="31.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ude-w2-YXA">
@@ -235,7 +243,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="CQR-6E-xuH"/>
+                    <tabBarItem key="tabBarItem" title="历史记录" image="bar_history_28" selectedImage="bar_history_h_28" id="CQR-6E-xuH"/>
                     <connections>
                         <outlet property="_tableView" destination="pJS-dg-8Wv" id="tQq-sX-rea"/>
                     </connections>
@@ -256,6 +264,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vy2-Tg-LPb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="NfE-q5-5xJ"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7x-gs-YWo" customClass="OFCatalogView">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <subviews>
@@ -265,10 +280,11 @@
                                             <constraint firstAttribute="height" constant="30" id="MuS-3N-F5q"/>
                                             <constraint firstAttribute="width" constant="45" id="RFY-9F-jNv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="上一级"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <state key="disabled">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="0.59630926724137934" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="backAction:" destination="rAz-1n-sW1" eventType="touchUpInside" id="2g1-ZB-Ose"/>
@@ -289,7 +305,7 @@
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.86786099137931039" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="ETz-Xx-IUy" firstAttribute="leading" secondItem="aD2-5i-qrs" secondAttribute="leading" id="5qe-xY-nOV"/>
                                             <constraint firstAttribute="trailing" secondItem="ETz-Xx-IUy" secondAttribute="trailing" id="ZGW-9R-cr5"/>
@@ -477,19 +493,23 @@
                             <constraint firstItem="i7x-gs-YWo" firstAttribute="leading" secondItem="Rnl-QP-iZP" secondAttribute="leading" id="83h-hy-dIG"/>
                             <constraint firstItem="i7x-gs-YWo" firstAttribute="top" secondItem="gcy-Wg-rcZ" secondAttribute="bottom" id="BHF-Cn-JdT"/>
                             <constraint firstItem="XYO-0E-shc" firstAttribute="leading" secondItem="Rnl-QP-iZP" secondAttribute="leading" id="KpR-dZ-Kg5"/>
+                            <constraint firstAttribute="trailing" secondItem="Vy2-Tg-LPb" secondAttribute="trailing" id="L9Z-65-Nht"/>
+                            <constraint firstItem="Vy2-Tg-LPb" firstAttribute="leading" secondItem="Rnl-QP-iZP" secondAttribute="leading" id="Qey-Zf-G81"/>
                             <constraint firstAttribute="trailing" secondItem="XYO-0E-shc" secondAttribute="trailing" id="ZNv-d7-GXl"/>
                             <constraint firstAttribute="trailing" secondItem="i7x-gs-YWo" secondAttribute="trailing" id="aMg-hw-gyY"/>
                             <constraint firstItem="XYO-0E-shc" firstAttribute="top" secondItem="i7x-gs-YWo" secondAttribute="bottom" id="cqC-KP-nue"/>
+                            <constraint firstItem="Vy2-Tg-LPb" firstAttribute="top" secondItem="Rnl-QP-iZP" secondAttribute="top" id="ety-vW-aGi"/>
                             <constraint firstItem="FHZ-Xi-c1F" firstAttribute="top" secondItem="XYO-0E-shc" secondAttribute="bottom" id="kmL-VS-Ojw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="qTa-YH-jl9"/>
+                    <tabBarItem key="tabBarItem" title="文件夹" image="bar_main_28" selectedImage="bar_mian_h_28" id="qTa-YH-jl9"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="_catalogView" destination="i7x-gs-YWo" id="UcX-24-Wn6"/>
                         <outlet property="_leftButton" destination="zFr-UK-Fid" id="QWz-At-kqT"/>
                         <outlet property="_rightButton" destination="i12-FP-cNU" id="Q62-oh-vTi"/>
                         <outlet property="_tableView" destination="XYO-0E-shc" id="0UB-56-VUb"/>
+                        <outlet property="_topBgView" destination="Vy2-Tg-LPb" id="33f-Ke-TZf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbd-X3-JCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -519,6 +539,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bar_fav_28" width="28" height="28"/>
+        <image name="bar_fav_h_28" width="28" height="28"/>
+        <image name="bar_history_28" width="28" height="28"/>
+        <image name="bar_history_h_28" width="28" height="28"/>
+        <image name="bar_main_28" width="28" height="28"/>
+        <image name="bar_mian_h_28" width="28" height="28"/>
+        <image name="bar_set_28" width="28" height="28"/>
+        <image name="bar_set_h_28" width="28" height="28"/>
         <image name="icon_def_doc_30" width="30" height="30"/>
         <image name="icon_folder_30" width="30" height="30"/>
     </resources>

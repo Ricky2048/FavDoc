@@ -44,17 +44,19 @@
 		5E673D681CF84C19008304AC /* OFFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E673D661CF84C19008304AC /* OFFileCell.m */; };
 		5E673D691CF84C19008304AC /* OFFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E673D671CF84C19008304AC /* OFFileCell.xib */; };
 		5EAD52291D012B0F00BE0553 /* demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD52281D0129BF00BE0553 /* demo.mp4 */; };
-		5EAD522D1D01663000BE0553 /* OFHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD522B1D01663000BE0553 /* OFHistoryController.m */; };
-		5EAD522E1D01663000BE0553 /* OFHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD522C1D01663000BE0553 /* OFHistoryController.xib */; };
 		5EAD52321D016AA900BE0553 /* OFHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD52301D016AA900BE0553 /* OFHistoryCell.m */; };
 		5EAD52331D016AA900BE0553 /* OFHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD52311D016AA900BE0553 /* OFHistoryCell.xib */; };
-		5EAD52371D01773000BE0553 /* OFFavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD52351D01773000BE0553 /* OFFavController.m */; };
-		5EAD52381D01773000BE0553 /* OFFavController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD52361D01773000BE0553 /* OFFavController.xib */; };
 		5EAD523C1D0177C000BE0553 /* OFFavCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD523A1D0177C000BE0553 /* OFFavCell.m */; };
 		5EAD523D1D0177C000BE0553 /* OFFavCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD523B1D0177C000BE0553 /* OFFavCell.xib */; };
 		5EAD52411D017C0A00BE0553 /* OFMoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD523F1D017C0A00BE0553 /* OFMoreController.m */; };
 		5EAD52421D017C0A00BE0553 /* OFMoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD52401D017C0A00BE0553 /* OFMoreController.xib */; };
 		5EAD52451D0181CF00BE0553 /* OFCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD52441D0181CF00BE0553 /* OFCoreDataHelper.m */; };
+		5EB1B9D41D0EA3A600A3F20F /* UIColor+OFColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1B9D31D0EA3A600A3F20F /* UIColor+OFColor.m */; };
+		5EB1B9DB1D0EB36F00A3F20F /* OFFavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1B9D61D0EB36F00A3F20F /* OFFavController.m */; };
+		5EB1B9DC1D0EB36F00A3F20F /* OFFavController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB1B9D71D0EB36F00A3F20F /* OFFavController.xib */; };
+		5EB1B9DD1D0EB36F00A3F20F /* OFHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1B9D91D0EB36F00A3F20F /* OFHistoryController.m */; };
+		5EB1B9DE1D0EB36F00A3F20F /* OFHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB1B9DA1D0EB36F00A3F20F /* OFHistoryController.xib */; };
+		5EB1B9E01D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB1B9DF1D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets */; };
 		5ECB87241CFBE47A006A2595 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */; };
 		5ECB87261CFBE5B0006A2595 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */; };
 		5ECB87281CFBF2E9006A2595 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */; };
@@ -133,15 +135,9 @@
 		5E673D661CF84C19008304AC /* OFFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFileCell.m; sourceTree = "<group>"; };
 		5E673D671CF84C19008304AC /* OFFileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFileCell.xib; sourceTree = "<group>"; };
 		5EAD52281D0129BF00BE0553 /* demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = demo.mp4; sourceTree = "<group>"; };
-		5EAD522A1D01663000BE0553 /* OFHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHistoryController.h; sourceTree = "<group>"; };
-		5EAD522B1D01663000BE0553 /* OFHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHistoryController.m; sourceTree = "<group>"; };
-		5EAD522C1D01663000BE0553 /* OFHistoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFHistoryController.xib; sourceTree = "<group>"; };
 		5EAD522F1D016AA900BE0553 /* OFHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHistoryCell.h; sourceTree = "<group>"; };
 		5EAD52301D016AA900BE0553 /* OFHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHistoryCell.m; sourceTree = "<group>"; };
 		5EAD52311D016AA900BE0553 /* OFHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFHistoryCell.xib; sourceTree = "<group>"; };
-		5EAD52341D01773000BE0553 /* OFFavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFavController.h; sourceTree = "<group>"; };
-		5EAD52351D01773000BE0553 /* OFFavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFavController.m; sourceTree = "<group>"; };
-		5EAD52361D01773000BE0553 /* OFFavController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFavController.xib; sourceTree = "<group>"; };
 		5EAD52391D0177C000BE0553 /* OFFavCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFavCell.h; sourceTree = "<group>"; };
 		5EAD523A1D0177C000BE0553 /* OFFavCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFavCell.m; sourceTree = "<group>"; };
 		5EAD523B1D0177C000BE0553 /* OFFavCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFavCell.xib; sourceTree = "<group>"; };
@@ -151,6 +147,16 @@
 		5EAD52431D0181CF00BE0553 /* OFCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFCoreDataHelper.h; sourceTree = "<group>"; };
 		5EAD52441D0181CF00BE0553 /* OFCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFCoreDataHelper.m; sourceTree = "<group>"; };
 		5EAD52461D031B4700BE0553 /* Global_constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global_constant.h; sourceTree = "<group>"; };
+		5EB1B9D11D0EA28500A3F20F /* Global_Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global_Color.h; sourceTree = "<group>"; };
+		5EB1B9D21D0EA3A600A3F20F /* UIColor+OFColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+OFColor.h"; sourceTree = "<group>"; };
+		5EB1B9D31D0EA3A600A3F20F /* UIColor+OFColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+OFColor.m"; sourceTree = "<group>"; };
+		5EB1B9D51D0EB36F00A3F20F /* OFFavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFavController.h; sourceTree = "<group>"; };
+		5EB1B9D61D0EB36F00A3F20F /* OFFavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFavController.m; sourceTree = "<group>"; };
+		5EB1B9D71D0EB36F00A3F20F /* OFFavController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFavController.xib; sourceTree = "<group>"; };
+		5EB1B9D81D0EB36F00A3F20F /* OFHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHistoryController.h; sourceTree = "<group>"; };
+		5EB1B9D91D0EB36F00A3F20F /* OFHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHistoryController.m; sourceTree = "<group>"; };
+		5EB1B9DA1D0EB36F00A3F20F /* OFHistoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFHistoryController.xib; sourceTree = "<group>"; };
+		5EB1B9DF1D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bar_and_tab_icon.xcassets; sourceTree = "<group>"; };
 		5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -250,6 +256,7 @@
 				5E3BB3E31CF3EEFC006DC603 /* AppDelegate.m */,
 				5E3BB3E81CF3EEFC006DC603 /* Main.storyboard */,
 				5E3BB3EE1CF3EEFC006DC603 /* Assets.xcassets */,
+				5EB1B9DF1D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets */,
 				5E3BB3F01CF3EEFC006DC603 /* LaunchScreen.storyboard */,
 				5E3BB3F31CF3EEFC006DC603 /* Info.plist */,
 				5E3BB3EB1CF3EEFC006DC603 /* FavDoc.xcdatamodeld */,
@@ -330,12 +337,6 @@
 				5ECB872E1CFC2402006A2595 /* OFVideoPreviewController.h */,
 				5ECB872F1CFC2402006A2595 /* OFVideoPreviewController.m */,
 				5ECB87301CFC2402006A2595 /* OFVideoPreviewController.xib */,
-				5EAD522A1D01663000BE0553 /* OFHistoryController.h */,
-				5EAD522B1D01663000BE0553 /* OFHistoryController.m */,
-				5EAD522C1D01663000BE0553 /* OFHistoryController.xib */,
-				5EAD52341D01773000BE0553 /* OFFavController.h */,
-				5EAD52351D01773000BE0553 /* OFFavController.m */,
-				5EAD52361D01773000BE0553 /* OFFavController.xib */,
 			);
 			path = DocPages;
 			sourceTree = "<group>";
@@ -343,6 +344,12 @@
 		5E3BB40A1CF3F25A006DC603 /* SettingPages */ = {
 			isa = PBXGroup;
 			children = (
+				5EB1B9D81D0EB36F00A3F20F /* OFHistoryController.h */,
+				5EB1B9D91D0EB36F00A3F20F /* OFHistoryController.m */,
+				5EB1B9DA1D0EB36F00A3F20F /* OFHistoryController.xib */,
+				5EB1B9D51D0EB36F00A3F20F /* OFFavController.h */,
+				5EB1B9D61D0EB36F00A3F20F /* OFFavController.m */,
+				5EB1B9D71D0EB36F00A3F20F /* OFFavController.xib */,
 				5EAD523E1D017C0A00BE0553 /* OFMoreController.h */,
 				5EAD523F1D017C0A00BE0553 /* OFMoreController.m */,
 				5EAD52401D017C0A00BE0553 /* OFMoreController.xib */,
@@ -387,6 +394,7 @@
 				5E3BB4A61CF42D8D006DC603 /* Global_CoreDate.h */,
 				5E3BB4B01CF43966006DC603 /* Global_Segue.h */,
 				5EAD52461D031B4700BE0553 /* Global_constant.h */,
+				5EB1B9D11D0EA28500A3F20F /* Global_Color.h */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -396,6 +404,8 @@
 			children = (
 				5E3BB4261CF3FB46006DC603 /* UITabBar+MFBadge.h */,
 				5E3BB4271CF3FB46006DC603 /* UITabBar+MFBadge.m */,
+				5EB1B9D21D0EA3A600A3F20F /* UIColor+OFColor.h */,
+				5EB1B9D31D0EA3A600A3F20F /* UIColor+OFColor.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -526,7 +536,6 @@
 				5EAD52291D012B0F00BE0553 /* demo.mp4 in Resources */,
 				5EAD52421D017C0A00BE0553 /* OFMoreController.xib in Resources */,
 				5E4EA33D1CF6954F00EE6764 /* OFFolderCell.xib in Resources */,
-				5EAD52381D01773000BE0553 /* OFFavController.xib in Resources */,
 				5EAD52331D016AA900BE0553 /* OFHistoryCell.xib in Resources */,
 				5ECB87321CFC2402006A2595 /* OFVideoPreviewController.xib in Resources */,
 				5E3BB3F21CF3EEFC006DC603 /* LaunchScreen.storyboard in Resources */,
@@ -538,7 +547,9 @@
 				5E4EA3421CF6DD0C00EE6764 /* OFImagePickerController.xib in Resources */,
 				5ED435081CF6F03C00867059 /* OFImagePreviewController.xib in Resources */,
 				5E3BB4AE1CF434C4006DC603 /* OFMianController.xib in Resources */,
-				5EAD522E1D01663000BE0553 /* OFHistoryController.xib in Resources */,
+				5EB1B9DC1D0EB36F00A3F20F /* OFFavController.xib in Resources */,
+				5EB1B9E01D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets in Resources */,
+				5EB1B9DE1D0EB36F00A3F20F /* OFHistoryController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EB1B9DB1D0EB36F00A3F20F /* OFFavController.m in Sources */,
 				5E673D5E1CF841CA008304AC /* OFHistoryEntity.m in Sources */,
 				5ED435071CF6F03C00867059 /* OFImagePreviewController.m in Sources */,
 				5ED4350B1CF6FB0E00867059 /* Utils.m in Sources */,
@@ -556,7 +568,6 @@
 				5E3BB4051CF3F1D9006DC603 /* OFBaseTableController.m in Sources */,
 				5E3BB4B31CF439CB006DC603 /* OFStartController.m in Sources */,
 				5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */,
-				5EAD52371D01773000BE0553 /* OFFavController.m in Sources */,
 				5E3BB42C1CF3FBD2006DC603 /* OFDataHelper.m in Sources */,
 				5E4EA33C1CF6954F00EE6764 /* OFFolderCell.m in Sources */,
 				5E3BB4081CF3F1F8006DC603 /* OFBaseController.m in Sources */,
@@ -566,6 +577,7 @@
 				5E673D641CF841CA008304AC /* OFUserEntity.m in Sources */,
 				5E673D631CF841CA008304AC /* OFUserEntity+CoreDataProperties.m in Sources */,
 				5E3BB3E11CF3EEFC006DC603 /* main.m in Sources */,
+				5EB1B9DD1D0EB36F00A3F20F /* OFHistoryController.m in Sources */,
 				5EAD52451D0181CF00BE0553 /* OFCoreDataHelper.m in Sources */,
 				5E3BB4AD1CF434C4006DC603 /* OFMianController.m in Sources */,
 				5E3BB4BA1CF43AE3006DC603 /* ReplaceNoAnimationSegue.m in Sources */,
@@ -573,12 +585,12 @@
 				5E3BB40E1CF3F287006DC603 /* OFMianTabbarController.m in Sources */,
 				5E3BB4C11CF45338006DC603 /* OFCatalogView.m in Sources */,
 				5E3BB4281CF3FB46006DC603 /* UITabBar+MFBadge.m in Sources */,
+				5EB1B9D41D0EA3A600A3F20F /* UIColor+OFColor.m in Sources */,
 				5EAD523C1D0177C000BE0553 /* OFFavCell.m in Sources */,
 				5E673D5F1CF841CA008304AC /* OFFavEntity+CoreDataProperties.m in Sources */,
 				5E4EA3411CF6DD0C00EE6764 /* OFImagePickerController.m in Sources */,
 				5E673D601CF841CA008304AC /* OFFavEntity.m in Sources */,
 				5ECB87311CFC2402006A2595 /* OFVideoPreviewController.m in Sources */,
-				5EAD522D1D01663000BE0553 /* OFHistoryController.m in Sources */,
 				5E673D5D1CF841CA008304AC /* OFHistoryEntity+CoreDataProperties.m in Sources */,
 				5E3BB4B91CF43AE3006DC603 /* PushNoAnimationSegue.m in Sources */,
 				5E673D621CF841CA008304AC /* OFBaseEntity.m in Sources */,

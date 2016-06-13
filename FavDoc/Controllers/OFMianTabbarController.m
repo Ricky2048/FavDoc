@@ -17,6 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    self.navigationController.navigationBar.barTintColor = kColorNavBg;
+    
+//    self.navigationController.navigationBar.tintColor = [UIColor ColorWithHexString:@"#FFFFFF"];
+  
+    // 白色标题
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+
+    
+    self.tabBar.barTintColor = kColorTabBarBg;
+    
+    self.tabBar.tintColor = kColorTabBarTint;
+ 
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

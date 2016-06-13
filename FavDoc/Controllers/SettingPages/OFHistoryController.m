@@ -36,7 +36,7 @@
 {
     [super viewWillAppear:animated];
 
-    self.tabBarController.title = @"History";
+    self.tabBarController.title = @"历史记录";
 
     [self updateData];
 
