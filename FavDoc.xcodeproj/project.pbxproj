@@ -18,6 +18,7 @@
 		5E32326D1D0FAEF6007B240B /* OFSwitchClothController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E32326B1D0FAEF6007B240B /* OFSwitchClothController.xib */; };
 		5E3232701D0FB6CC007B240B /* OFClothHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32326F1D0FB6CC007B240B /* OFClothHelper.m */; };
 		5E3232731D0FE153007B240B /* OFBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3232721D0FE153007B240B /* OFBaseCell.m */; };
+		5E32327B1D1005C6007B240B /* OFNoSelectionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32327A1D1005C6007B240B /* OFNoSelectionTextView.m */; };
 		5E3BB3E11CF3EEFC006DC603 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E01CF3EEFC006DC603 /* main.m */; };
 		5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E31CF3EEFC006DC603 /* AppDelegate.m */; };
 		5E3BB3EA1CF3EEFC006DC603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E81CF3EEFC006DC603 /* Main.storyboard */; };
@@ -90,6 +91,8 @@
 		5E32326F1D0FB6CC007B240B /* OFClothHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFClothHelper.m; sourceTree = "<group>"; };
 		5E3232711D0FE153007B240B /* OFBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBaseCell.h; sourceTree = "<group>"; };
 		5E3232721D0FE153007B240B /* OFBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBaseCell.m; sourceTree = "<group>"; };
+		5E3232791D1005C6007B240B /* OFNoSelectionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFNoSelectionTextView.h; sourceTree = "<group>"; };
+		5E32327A1D1005C6007B240B /* OFNoSelectionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFNoSelectionTextView.m; sourceTree = "<group>"; };
 		5E3BB3DC1CF3EEFC006DC603 /* FavDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3BB3E01CF3EEFC006DC603 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E3BB3E21CF3EEFC006DC603 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 			children = (
 				5E3232711D0FE153007B240B /* OFBaseCell.h */,
 				5E3232721D0FE153007B240B /* OFBaseCell.m */,
+				5E3232791D1005C6007B240B /* OFNoSelectionTextView.h */,
+				5E32327A1D1005C6007B240B /* OFNoSelectionTextView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,12 +358,12 @@
 				5ECB872E1CFC2402006A2595 /* OFVideoPreviewController.h */,
 				5ECB872F1CFC2402006A2595 /* OFVideoPreviewController.m */,
 				5ECB87301CFC2402006A2595 /* OFVideoPreviewController.xib */,
-				5E32325F1D0FAE78007B240B /* OFFavController.h */,
-				5E3232601D0FAE78007B240B /* OFFavController.m */,
-				5E3232611D0FAE78007B240B /* OFFavController.xib */,
 				5E3232621D0FAE78007B240B /* OFHistoryController.h */,
 				5E3232631D0FAE78007B240B /* OFHistoryController.m */,
 				5E3232641D0FAE78007B240B /* OFHistoryController.xib */,
+				5E32325F1D0FAE78007B240B /* OFFavController.h */,
+				5E3232601D0FAE78007B240B /* OFFavController.m */,
+				5E3232611D0FAE78007B240B /* OFFavController.xib */,
 			);
 			path = DocPages;
 			sourceTree = "<group>";
@@ -594,6 +599,7 @@
 				5E32326C1D0FAEF6007B240B /* OFSwitchClothController.m in Sources */,
 				5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */,
 				5E3BB42C1CF3FBD2006DC603 /* OFDataHelper.m in Sources */,
+				5E32327B1D1005C6007B240B /* OFNoSelectionTextView.m in Sources */,
 				5E4EA33C1CF6954F00EE6764 /* OFFolderCell.m in Sources */,
 				5E3BB4081CF3F1F8006DC603 /* OFBaseController.m in Sources */,
 				5E3BB3ED1CF3EEFC006DC603 /* FavDoc.xcdatamodeld in Sources */,

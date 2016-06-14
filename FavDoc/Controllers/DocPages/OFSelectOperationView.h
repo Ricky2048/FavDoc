@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#define numOfRow 4
+#define numOfRow 5
 #define hightOfRow 44
-#define widthOfView 150
+#define widthOfView 166
 
 typedef enum : NSUInteger {
     OFSelectOperationCreateFolder,
@@ -27,11 +27,17 @@ typedef void (^SelectOperationBlock) (OFSelectOperation operation);
     
     NSArray *_dataSource;
     
+    NSArray *_imageSource;
+    
     SelectOperationBlock _operationBlock;
     
     UIView *_maskView;
     
+    UIImageView *_topArrow;
+    
 }
+
+- (void)updateCloth;
 
 - (void)addSelectBlock:(SelectOperationBlock)block;
 

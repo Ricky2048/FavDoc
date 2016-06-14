@@ -49,8 +49,8 @@
             [self createDirectoryAtPath:@""];
             
             // 创建Demo
-            [self createDirectoryAtPath:@"Videos"];
-            [self createDirectoryAtPath:@"Pictures"];
+            [self createDirectoryAtPath:defaultFloder1];
+            [self createDirectoryAtPath:defaultFloder2];
             
             NSString *fullDemoDir = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"jpg"];
             NSString *fullDstDir = [OFDocHelper fullPath:@"demo.jpg"];
@@ -310,7 +310,11 @@
 
 + (NSArray *)getFavList:(NSInteger)maxNum
 {
-    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableFav];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"date" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor,nil];
+
+    NSArray *results = [[OFCoreDataHelper shareInstance] fetcthTable:kTableFav sortOption:sortDescriptors];
     
     if (results.count > maxNum) {
         results  = [results subarrayWithRange:NSMakeRange(0, maxNum)];

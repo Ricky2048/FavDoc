@@ -22,6 +22,8 @@
 
 #define kUserDefaultKeyClothType    @"usserDefaultKeyClothType"
 
+#define kUserDefaultKeyUserKey      @"userDefaultKeyUserKey"
+
 #define setUserDefault(key, object) \
 if (object == nil) \
 [[NSUserDefaults standardUserDefaults] removeObjectForKey:(key)]; \

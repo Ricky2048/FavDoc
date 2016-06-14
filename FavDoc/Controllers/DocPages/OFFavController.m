@@ -32,7 +32,8 @@
     [super viewWillAppear:animated];
     
     self.tabBarController.title = @"收藏夹";
-    
+    self.title = @"收藏夹";
+//UIMenuController
     [self updateData];
 }
 

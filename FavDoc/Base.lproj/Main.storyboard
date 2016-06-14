@@ -367,7 +367,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD2-5i-qrs">
                                         <rect key="frame" x="40" y="8" width="520" height="29"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="/qw/1231/13123" translatesAutoresizingMaskIntoConstraints="NO" id="ETz-Xx-IUy">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="/qw/1231/13123" translatesAutoresizingMaskIntoConstraints="NO" id="ETz-Xx-IUy" customClass="OFNoSelectionTextView">
                                                 <rect key="frame" x="0.0" y="0.0" width="520" height="29"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>

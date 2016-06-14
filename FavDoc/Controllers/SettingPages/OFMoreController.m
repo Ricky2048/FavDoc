@@ -9,7 +9,7 @@
 #import "OFMoreController.h"
 
 #define keyPassword     @"访问密码"
-#define keyClouth       @"切换皮肤"
+#define keyCloth        @"切换皮肤"
 #define keyStatistic    @"使用统计"
 #define keyHistory      @"历史记录"
 #define keyFav          @"收藏夹"
@@ -72,7 +72,7 @@
 - (void)setData
 {
     _dataSource = @[keyPassword,
-                    keyClouth,
+                    keyCloth,
                     keyStatistic,
                     keyHistory,
                     keyFav,
@@ -121,7 +121,7 @@
     if ([text isEqualToString:keyPassword]) {
         cell.detailTextLabel.text = @"未开启";
     }
-    if ([text isEqualToString:keyClouth]) {
+    if ([text isEqualToString:keyCloth]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     if ([text isEqualToString:keyStatistic]) {
@@ -139,7 +139,8 @@
     }
     if ([text isEqualToString:keyUserKey]) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.detailTextLabel.text = @"Random";
+        NSString *userKey = getUserDefault(kUserDefaultKeyUserKey);
+        cell.detailTextLabel.text = userKey;
     }
     if ([text isEqualToString:keyContact]) {
         cell.detailTextLabel.text = @"有啥事发个邮件呗";
@@ -156,7 +157,7 @@
     
     NSString *text = _dataSource[indexPath.row];
 
-    if ([text isEqualToString:keyClouth]) {
+    if ([text isEqualToString:keyCloth]) {
         [self performSegueWithIdentifier:kSegueSettingToCloth sender:self];
     }
     if ([text isEqualToString:keyHistory]) {

@@ -60,7 +60,7 @@
 
 - (void)awakeFromNib
 {
-     _scrollView.layer.cornerRadius = 3;
+    _scrollView.layer.cornerRadius = 3;
     _scrollView.layer.masksToBounds = YES;
     
     _pathTextView.delegate = self;
@@ -77,6 +77,8 @@
     [_backBtn setTintColor:kColorAllStyle];
     [_operateBtn setTintColor:kColorAllStyle];
     _pathTextView.linkTextAttributes = @{NSForegroundColorAttributeName:kColorAllStyle};
+    _scrollView.backgroundColor = kColorTabBarBg;
+    
 
 }
 - (void)setPath:(NSString *)path

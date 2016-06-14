@@ -1,5 +1,5 @@
 //
-//  OFBaseCell.h
+//  OFNoSelectionTextView.h
 //  FavDoc
 //
 //  Created by Ricky Lin on 16/6/14.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OFBaseCell : UITableViewCell
-
-@property (nonatomic, copy)NSIndexPath *indexPath;
-
-- (void)updateCloth;
+@interface OFNoSelectionTextView : UITextView
 
 @end

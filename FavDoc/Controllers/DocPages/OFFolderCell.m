@@ -14,7 +14,7 @@
     [super awakeFromNib];
     // Initialization code
     
-    UIImage *image = [[UIImage imageNamed:@"icon_floder_28"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *image = [[UIImage imageNamed:@"icon_floder_1_28"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.imageView.image = image;
 }
 
@@ -54,6 +54,11 @@
 - (void)updateCloth
 {
     self.imageView.tintColor = kColorAllStyle;
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
 }
 
 @end

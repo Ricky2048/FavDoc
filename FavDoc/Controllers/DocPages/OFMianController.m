@@ -30,6 +30,8 @@
     
     __weak IBOutlet UIButton *_rightButton;
     
+    NSIndexPath *_currentIndex;
+    
 }
 
 @property (nonatomic, strong) NSDictionary *fileDic;
@@ -149,6 +151,8 @@
     _catalogView.backgroundColor = kColorNavBg;
     _tableView.separatorColor = kColorLine;
     [_catalogView updateCloth];
+    [_maskView updateCloth];
+    
     
 //    [_tableView reloadData];
 }
@@ -257,7 +261,11 @@
         NSArray *arr = _fileDic[keyFolder];
         NSString *name = arr[indexPath.row];
         [cell setPath:_fileDic[keyPath] name:name];
+        cell.indexPath = indexPath;
 
+        UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+        [cell addGestureRecognizer:recognizer];
+        
         return cell;
     }
     
@@ -266,6 +274,10 @@
     NSArray *arr = _fileDic[keyFile];
     NSString *name = arr[indexPath.row];
     [cell setPath:_fileDic[keyPath] name:name];
+    cell.indexPath = indexPath;
+    
+    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+    [cell addGestureRecognizer:recognizer];
     
     return cell;
 }
@@ -279,7 +291,6 @@
         NSArray *arr = _fileDic[keyFolder];
         NSString *path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
         [self setPath:path];
-        
         
         return;
     }
@@ -301,48 +312,141 @@
         [self presentViewController:vc animated:NO completion:^{
             
         }];
-//        NSLog(@"mp4");
     }
     
 }
 
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    // Return NO if you do not want the specified item to be editable.
+//    
+//    if (indexPath.section == 0 ) {
+//        NSArray *arr = _fileDic[keyFolder];
+//        NSString *path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
+//        if ([path isEqualToString:@"/Videos"]||[path isEqualToString:@"/Pictures"]) {
+//            return NO;
+//        }
+//    }
+//    return YES;
+//    
+//}
+
+
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        // Delete the row from the data source
+//        
+//        NSString *path;
+//        
+//        if (indexPath.section == 0) {
+//            NSArray *arr = _fileDic[keyFolder];
+//            path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
+//        }
+//        if (indexPath.section == 1) {
+//            NSArray *arr = _fileDic[keyFile];
+//            path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
+//        }
+//        if ([[OFDocHelper shareInstance] deleteItemAtPath:path]) {
+//            [self updateData];
+//        }
+//        
+//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }
+//}
+
+#pragma mark - UIMenuController
+
+- (void)longPress:(UILongPressGestureRecognizer *)recognizer {
     
-    if (indexPath.section == 0 ) {
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        
+        OFBaseCell *cell = (OFBaseCell *)recognizer.view;
+        
+        _currentIndex = cell.indexPath;
+        
+        [cell becomeFirstResponder];
+        
+        UIMenuItem *copy = [[UIMenuItem alloc] initWithTitle:@"复制"action:@selector(myCopy:)];
+        
+        UIMenuItem *cut = [[UIMenuItem alloc] initWithTitle:@"剪切"action:@selector(myCut:)];
+
+        UIMenuItem *rename = [[UIMenuItem alloc] initWithTitle:@"重命名"action:@selector(myRename:)];
+        
+        UIMenuItem *delete = [[UIMenuItem alloc] initWithTitle:@"删除"action:@selector(myDelete:)];
+        
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        
+        [menu setMenuItems:[NSArray arrayWithObjects:copy, cut, rename, delete, nil]];
+        
+        [menu setTargetRect:cell.frame inView:cell.superview];
+        
+        [menu setMenuVisible:YES animated:YES];
+        
+    }
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
+{
+    if (action == @selector(myCopy:)) {
+        return YES;
+    }
+    if (action == @selector(myCut:)) {
+        return YES;
+    }
+    if (action == @selector(myRename:)) {
+        return YES;
+    }
+    if (action == @selector(myDelete:)) {
+        return YES;
+    }
+    return NO;
+}
+
+- (void)myCopy:(id)sender
+{
+
+    
+    
+}
+
+- (void)myCut:(id)sender
+{
+    if (![self canEditCurrentIndex]) {
+        return;
+    }
+
+    
+}
+
+- (void)myRename:(id)sender
+{
+    if (![self canEditCurrentIndex]) {
+        return;
+    }
+    
+}
+
+- (void)myDelete:(id)sender
+{
+    if (![self canEditCurrentIndex]) {
+        return;
+    }
+
+    
+}
+
+- (BOOL)canEditCurrentIndex
+{
+    if (_currentIndex.section == 0 ) {
         NSArray *arr = _fileDic[keyFolder];
-        NSString *path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
-        if ([path isEqualToString:@"/Videos"]||[path isEqualToString:@"/Pictures"]) {
+        NSString *path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[_currentIndex.row]];
+        if ([path isEqualToString:defaultFloder1]||[path isEqualToString:defaultFloder2]) {
             return NO;
         }
     }
-    return YES;
     
+    return YES;
 }
 
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        
-        NSString *path;
-        
-        if (indexPath.section == 0) {
-            NSArray *arr = _fileDic[keyFolder];
-            path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
-        }
-        if (indexPath.section == 1) {
-            NSArray *arr = _fileDic[keyFile];
-            path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
-        }
-        if ([[OFDocHelper shareInstance] deleteItemAtPath:path]) {
-            [self updateData];
-        }
-        
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-}
- 
 @end

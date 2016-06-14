@@ -20,21 +20,57 @@
         _maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
         [self addSubview:_maskView];
         
-        _dataSource = @[@"新建文件夹",@"新增图片/视频",@"清空目录",@"移动目录"];
+        [self setData];
+
         
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(point.x, point.y, widthOfView, hightOfRow*numOfRow)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(point.x-4, point.y+4, widthOfView, hightOfRow*numOfRow)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.scrollEnabled = NO;
+        _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+        _tableView.layer.cornerRadius = 3;
         [self addSubview:_tableView];
+        
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideMaskView)];
         tap.delegate = self;
         [_maskView addGestureRecognizer:tap];
         
+        _topArrow = [[UIImageView alloc] initWithFrame:CGRectMake(_tableView.frame.origin.x + _tableView.frame.size.width - 26, _tableView.frame.origin.y - 14, 20, 20)];
+        _topArrow.image = [[UIImage imageNamed:@"icon_topArrow_20"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+
+        [self addSubview:_topArrow];
+        
+        [self updateCloth];
+
     }
     
     return self;
+}
+
+- (void)updateCloth
+{
+    
+    _tableView.separatorColor = kColorLine;
+    _tableView.backgroundColor = kColorTabBarBg;
+    _topArrow.tintColor = kColorTabBarBg;
+
+    [_tableView reloadData];
+}
+
+- (void)setData
+{
+    _dataSource = @[@"新建文件夹",
+                    @"相册选择",
+                    @"相机拍摄",
+                    @"新建文本",
+                    @"粘贴"];
+    
+    _imageSource = @[@"icon_floder_1_28",
+                     @"icon_album_28",
+                     @"icon_camera_28",
+                     @"icon_text_28",
+                     @"icon_plaste_28"];
 }
 
 - (void)addSelectBlock:(SelectOperationBlock)block
@@ -73,8 +109,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
 
+    cell.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:16];
     NSString *name = _dataSource[indexPath.row];
     cell.textLabel.text = name;
+    
+    UIImage *image = [UIImage imageNamed:_imageSource[indexPath.row]];
+    cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    cell.imageView.tintColor = kColorAllStyle;
     
     return cell;
 }

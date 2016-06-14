@@ -32,7 +32,7 @@
     
     char data[num];
     
-    for (int x=0;x<num;data[x++] = (char)('a' + (arc4random_uniform(26))));
+    for (int x=0;x<num;data[x++] = (char)('A' + (arc4random_uniform(26))));
     
     return [[NSString alloc] initWithBytes:data length:num encoding:NSUTF8StringEncoding];
     

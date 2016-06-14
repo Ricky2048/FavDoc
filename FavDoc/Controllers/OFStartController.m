@@ -15,6 +15,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self checkUserKey];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -30,6 +32,18 @@
     
     [self performSegueWithIdentifier:kSegueStartToMian sender:self];
 
+}
+
+- (void)checkUserKey
+{
+    NSString *userKey = getUserDefault(kUserDefaultKeyUserKey);
+    
+    if (userKey == nil) {
+        
+        userKey = [Utils randomString:16];
+        
+        setUserDefault(kUserDefaultKeyUserKey, userKey);
+    }
 }
 
 @end
