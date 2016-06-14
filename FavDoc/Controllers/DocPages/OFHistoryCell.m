@@ -14,7 +14,6 @@
     [super awakeFromNib];
     // Initialization code
     UIImage *image = [[UIImage imageNamed:@"icon_file_28"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.imageView.tintColor = kColorAllStyle;
     self.imageView.image = image;
 }
 
@@ -31,6 +30,13 @@
     NSString *detailStr = [NSString stringWithFormat:@"%@(%@)",[Utils getTimeOffDateStr:entity.date],[OFDocHelper inMainPath:[entity.path stringByDeletingLastPathComponent]]];
     
     self.detailTextLabel.text = detailStr;
+    
+    [self updateCloth];
+}
+
+- (void)updateCloth
+{
+    self.imageView.tintColor = kColorAllStyle;
 }
 
 @end

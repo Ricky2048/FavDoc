@@ -6,9 +6,9 @@
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "OFBaseCell.h"
 
-@interface OFHistoryCell : UITableViewCell
+@interface OFHistoryCell : OFBaseCell
 
 @property(nonatomic, strong)OFHistoryEntity *entity;
 

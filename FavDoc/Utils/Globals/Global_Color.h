@@ -15,6 +15,8 @@
 
 #define kColorViewBg            [UIColor ColorWithHexString:@"#EEEEEE"]
 
+#define kColorLine              [UIColor ColorWithHexString:@"#C7C7C7"]
+
 #define kColorAllStyle          [[OFClothHelper shareInstance] currentColor]
 
 #define kColorNavBg             kColorAllStyle

@@ -16,4 +16,6 @@ typedef void (^SelectDirBlock) (NSString *dir);
 
 - (void)addSelectBlock:(SelectDirBlock)block;
 
+- (void)updateCloth;
+
 @end

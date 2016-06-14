@@ -17,6 +17,8 @@
     NSArray *_colorSource;
 
     UIColor *_selectColor;
+ 
+    NSIndexPath *_lastIndexPath;
     
 }
 @end
@@ -27,10 +29,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.title = @"切换皮肤";
     
-    
-    
-    
+    [self setData];
     
 }
 
@@ -60,6 +61,15 @@
                     @"蓝色",
                     @"黑色"];
     
+    OFClothHelper *helper = [OFClothHelper shareInstance];
+    
+    _colorSource = @[[helper getColorByType:OFColorClothGreen],
+                     [helper getColorByType:OFColorClothRed],
+                     [helper getColorByType:OFColorClothPink],
+                     [helper getColorByType:OFColorClothPurple],
+                     [helper getColorByType:OFColorClothBlue],
+                     [helper getColorByType:OFColorClothDark]
+                     ];
  
 }
 
@@ -78,15 +88,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     NSString *text = _dataSource[indexPath.row];
     cell.textLabel.text = text;
     
     cell.detailTextLabel.text = @"";
     cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.tintColor = kColorTabBarBg;
     
+    UIColor *color = _colorSource[indexPath.row];
+    cell.backgroundColor = color;
    
+    OFColorClothType type = [[OFClothHelper shareInstance] currentClothType];
+
+    if (indexPath.row == type) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        _lastIndexPath = indexPath;
+    }else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+       
     return cell;
 }
 
@@ -94,6 +115,14 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    [[OFClothHelper shareInstance] setCurrentColor:indexPath.row];
     
+    UITableViewCell *cell1 = [tableView cellForRowAtIndexPath:_lastIndexPath];
+    cell1.accessoryType = UITableViewCellAccessoryNone;
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+
+    _lastIndexPath = indexPath;
 }
 @end

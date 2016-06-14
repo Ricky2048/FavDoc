@@ -45,10 +45,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _topBgView.backgroundColor = kColorNavBg;
-    _catalogView.backgroundColor = kColorNavBg;
-    _tableView.separatorColor = kColorAllStyle;
-    
     self.tabBarController.title = @"";
 
     _leftButton.titleLabel.font = [UIFont fontWithName:@"iconfont" size:24];
@@ -146,6 +142,16 @@
 */
 
 #pragma mark - Actions
+
+- (void)updateCloth
+{
+    _topBgView.backgroundColor = kColorNavBg;
+    _catalogView.backgroundColor = kColorNavBg;
+    _tableView.separatorColor = kColorLine;
+    [_catalogView updateCloth];
+    
+//    [_tableView reloadData];
+}
 
 - (IBAction)backAction:(id)sender {
     

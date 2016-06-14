@@ -10,8 +10,13 @@
 #define Global_Segue_h
 
 
-#define kSegueStartToMian   @"startToMain"
+#define kSegueStartToMian           @"startToMain"
 
-#define kSegueSettingToCloth   @"settingToCloth"
+#define kSegueSettingToCloth        @"settingToCloth"
+
+#define kSegueSettingToHistory      @"settingToHistory"
+
+#define kSegueSettingToFav          @"settingToFav"
+
 
 #endif /* Global_Segue_h */

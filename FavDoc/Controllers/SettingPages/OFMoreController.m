@@ -8,6 +8,16 @@
 
 #import "OFMoreController.h"
 
+#define keyPassword     @"访问密码"
+#define keyClouth       @"切换皮肤"
+#define keyStatistic    @"使用统计"
+#define keyHistory      @"历史记录"
+#define keyFav          @"收藏夹"
+#define keyAbout        @"关于App"
+#define keyUserKey      @"UserKey"
+#define keyContact      @"联系作者"
+#define keyReset        @"重置所有内容"
+
 @interface OFMoreController ()<UITableViewDelegate,UITableViewDataSource>
 {
     __weak IBOutlet UITableView *_tableView;
@@ -24,7 +34,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _tableView.separatorColor = kColorAllStyle;
     
     [self setData];
 }
@@ -53,17 +62,24 @@
 
 #pragma mark - Action
 
+- (void)updateCloth
+{
+    [_tableView reloadData];
+    _tableView.separatorColor = kColorLine;
+
+}
+
 - (void)setData
 {
-    _dataSource = @[@"访问密码",
-                    @"切换皮肤",
-                    @"使用统计",
-                    @"历史记录",
-                    @"收藏夹",
-                    @"关于App",
-                    @"UserKey",
-                    @"联系作者",
-                    @"重置所有内容"];
+    _dataSource = @[keyPassword,
+                    keyClouth,
+                    keyStatistic,
+                    keyHistory,
+                    keyFav,
+                    keyAbout,
+                    keyUserKey,
+                    keyContact,
+                    keyReset];
     
     _imageSource = @[@"icon_lock_28",
                      @"iocn_clouth_28",
@@ -102,33 +118,33 @@
     cell.detailTextLabel.text = @"";
     cell.accessoryType = UITableViewCellAccessoryNone;
 
-    if ([text isEqualToString:@"访问密码"]) {
+    if ([text isEqualToString:keyPassword]) {
         cell.detailTextLabel.text = @"未开启";
     }
-    if ([text isEqualToString:@"切换皮肤"]) {
-        cell.detailTextLabel.text = @"默认皮肤";
-    }
-    if ([text isEqualToString:@"使用统计"]) {
+    if ([text isEqualToString:keyClouth]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    if ([text isEqualToString:@"历史记录"]) {
+    if ([text isEqualToString:keyStatistic]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    if ([text isEqualToString:@"收藏夹"]) {
+    if ([text isEqualToString:keyHistory]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    if ([text isEqualToString:@"关于App"]) {
+    if ([text isEqualToString:keyFav]) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    if ([text isEqualToString:keyAbout]) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.detailTextLabel.text = [NSString stringWithFormat:@"v%@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
     }
-    if ([text isEqualToString:@"UserKey"]) {
+    if ([text isEqualToString:keyUserKey]) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.detailTextLabel.text = @"Random";
     }
-    if ([text isEqualToString:@"联系作者"]) {
+    if ([text isEqualToString:keyContact]) {
         cell.detailTextLabel.text = @"有啥事发个邮件呗";
     }
-    if ([text isEqualToString:@"重置所有内容"]) {
+    if ([text isEqualToString:keyReset]) {
         cell.detailTextLabel.text = @"请谨慎使用本功能";
     }
     return cell;
@@ -138,7 +154,17 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    NSString *text = _dataSource[indexPath.row];
+
+    if ([text isEqualToString:keyClouth]) {
+        [self performSegueWithIdentifier:kSegueSettingToCloth sender:self];
+    }
+    if ([text isEqualToString:keyHistory]) {
+        [self performSegueWithIdentifier:kSegueSettingToHistory sender:self];
+    }
+    if ([text isEqualToString:keyFav]) {
+        [self performSegueWithIdentifier:kSegueSettingToFav sender:self];
+    }
 }
 
 @end

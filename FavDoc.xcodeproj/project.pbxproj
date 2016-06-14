@@ -17,6 +17,7 @@
 		5E32326C1D0FAEF6007B240B /* OFSwitchClothController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32326A1D0FAEF6007B240B /* OFSwitchClothController.m */; };
 		5E32326D1D0FAEF6007B240B /* OFSwitchClothController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E32326B1D0FAEF6007B240B /* OFSwitchClothController.xib */; };
 		5E3232701D0FB6CC007B240B /* OFClothHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32326F1D0FB6CC007B240B /* OFClothHelper.m */; };
+		5E3232731D0FE153007B240B /* OFBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3232721D0FE153007B240B /* OFBaseCell.m */; };
 		5E3BB3E11CF3EEFC006DC603 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E01CF3EEFC006DC603 /* main.m */; };
 		5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E31CF3EEFC006DC603 /* AppDelegate.m */; };
 		5E3BB3EA1CF3EEFC006DC603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E81CF3EEFC006DC603 /* Main.storyboard */; };
@@ -87,6 +88,8 @@
 		5E32326B1D0FAEF6007B240B /* OFSwitchClothController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFSwitchClothController.xib; sourceTree = "<group>"; };
 		5E32326E1D0FB6CC007B240B /* OFClothHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFClothHelper.h; sourceTree = "<group>"; };
 		5E32326F1D0FB6CC007B240B /* OFClothHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFClothHelper.m; sourceTree = "<group>"; };
+		5E3232711D0FE153007B240B /* OFBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBaseCell.h; sourceTree = "<group>"; };
+		5E3232721D0FE153007B240B /* OFBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBaseCell.m; sourceTree = "<group>"; };
 		5E3BB3DC1CF3EEFC006DC603 /* FavDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3BB3E01CF3EEFC006DC603 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E3BB3E21CF3EEFC006DC603 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 		5E3BB3FE1CF3F137006DC603 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E3232711D0FE153007B240B /* OFBaseCell.h */,
+				5E3232721D0FE153007B240B /* OFBaseCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -405,9 +410,9 @@
 		5E3BB4241CF3F8E5006DC603 /* Globals */ = {
 			isa = PBXGroup;
 			children = (
+				5EAD52461D031B4700BE0553 /* Global_constant.h */,
 				5E3BB4A61CF42D8D006DC603 /* Global_CoreDate.h */,
 				5E3BB4B01CF43966006DC603 /* Global_Segue.h */,
-				5EAD52461D031B4700BE0553 /* Global_constant.h */,
 				5EB1B9D11D0EA28500A3F20F /* Global_Color.h */,
 			);
 			path = Globals;
@@ -593,6 +598,7 @@
 				5E3BB4081CF3F1F8006DC603 /* OFBaseController.m in Sources */,
 				5E3BB3ED1CF3EEFC006DC603 /* FavDoc.xcdatamodeld in Sources */,
 				5E673D3D1CF74D64008304AC /* OFSelectOperationView.m in Sources */,
+				5E3232731D0FE153007B240B /* OFBaseCell.m in Sources */,
 				5EAD52411D017C0A00BE0553 /* OFMoreController.m in Sources */,
 				5E673D641CF841CA008304AC /* OFUserEntity.m in Sources */,
 				5E673D631CF841CA008304AC /* OFUserEntity+CoreDataProperties.m in Sources */,

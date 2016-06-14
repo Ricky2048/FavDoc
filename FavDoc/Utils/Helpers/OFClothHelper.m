@@ -8,9 +8,9 @@
 
 #import "OFClothHelper.h"
 
-#define kColorClothGreen        @"#43CD80"
+#define kColorClothGreen        @"#71C671"
 
-#define kColorClothRed          @"#EE0000"
+#define kColorClothRed          @"#FF6A6A"
 
 #define kColorClothPink         @"#FF83FA"
 
@@ -18,7 +18,7 @@
 
 #define kColorClothBlue         @"#5CACEE"
 
-#define kColorClothDark         @"#303030"
+#define kColorClothDark         @"#545454"
 
 @interface OFClothHelper()
 {
@@ -27,9 +27,7 @@
 }
 @end
 
-
 @implementation OFClothHelper
-
 
 + (OFClothHelper *)shareInstance {
     
@@ -38,7 +36,12 @@
     dispatch_once(&oncePredicate, ^{
         _helper = [[OFClothHelper alloc]init];
         
-        [_helper setCurrentColor:OFColorClothPurple];
+        NSNumber *type = getUserDefault(kUserDefaultKeyClothType);
+        
+        _helper.updateClothCount = 0;
+
+        [_helper setCurrentColor:type.unsignedIntegerValue];
+        
     });
     return _helper;
 }
@@ -50,24 +53,37 @@
     return [UIColor ColorWithHexString:colorStr];
 }
 
-- (void)setCurrentColor:(OFColorClothType)colorType
+- (OFColorClothType)currentClothType
 {
-    _currentType = colorType;
+    return _currentType;
 }
 
-- (UIColor *)getColorByType:(OFColorClothType)colorType
+- (void)setCurrentColor:(OFColorClothType)clothType
 {
-    NSString *colorStr = [self getColorStr:colorType];
+    _currentType = clothType;
+    
+    NSNumber *type = [NSNumber numberWithUnsignedInteger:clothType];
+    
+    setUserDefault(kUserDefaultKeyClothType, type);
+    
+    _updateClothCount ++;
+    
+    [_tabBarVC updateCloth];
+}
+
+- (UIColor *)getColorByType:(OFColorClothType)clothType
+{
+    NSString *colorStr = [self getColorStr:clothType];
     
     return [UIColor ColorWithHexString:colorStr];
 }
 
-- (NSString *)getColorStr:(OFColorClothType)colorType
+- (NSString *)getColorStr:(OFColorClothType)clothType
 {
     
     NSString *colorStr = kColorClothGreen;
 
-    switch (colorType) {
+    switch (clothType) {
         case OFColorClothGreen:
             colorStr = kColorClothGreen;
             break;

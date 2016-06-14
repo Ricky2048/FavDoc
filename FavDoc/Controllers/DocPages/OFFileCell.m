@@ -18,19 +18,15 @@
     
     _fileTypeLabel.layer.cornerRadius = 3;
     _fileTypeLabel.layer.masksToBounds = YES;
-    _fileTypeLabel.backgroundColor = kColorAllStyle;
-    _fileTypeLabel.highlightedTextColor = kColorAllStyle;
-    _fileTypeLabel.layer.borderColor =  kColorAllStyle.CGColor;
     _fileTypeLabel.layer.borderWidth = .5;
     
     _imageView.layer.cornerRadius = 3;
     _imageView.layer.masksToBounds = YES;
-    _imageView.layer.borderColor =  kColorAllStyle.CGColor;
     _imageView.layer.borderWidth = .5;
     
     _moreBtn.titleLabel.font = [UIFont fontWithName:@"iconfont" size:24];
     [_moreBtn setTitle:@"\U0000e614" forState:UIControlStateNormal];
-    [_moreBtn setTitleColor:kColorAllStyle forState:UIControlStateNormal];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -117,7 +113,17 @@
     }else {
         [_moreBtn setTitle:@"\U0000e614" forState:UIControlStateNormal];
     }
+    
+    [self updateCloth];
+}
 
+- (void)updateCloth
+{
+    [_moreBtn setTitleColor:kColorAllStyle forState:UIControlStateNormal];
+    _imageView.layer.borderColor =  kColorLine.CGColor;
+    _fileTypeLabel.backgroundColor = kColorAllStyle;
+    _fileTypeLabel.highlightedTextColor = kColorAllStyle;
+    _fileTypeLabel.layer.borderColor =  kColorAllStyle.CGColor;
 }
 
 - (NSString *)getDateStr:(NSDate *)date

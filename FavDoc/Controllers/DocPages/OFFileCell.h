@@ -6,9 +6,9 @@
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "OFBaseCell.h"
 
-@interface OFFileCell : UITableViewCell
+@interface OFFileCell : OFBaseCell
 {
     
     __weak IBOutlet UIImageView *_imageView;

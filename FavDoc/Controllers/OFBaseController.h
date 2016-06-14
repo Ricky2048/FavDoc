@@ -9,7 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface OFBaseController : UIViewController
+{
+    NSInteger _updateClothCount;
+    
+    BOOL _isFirstLoad;
+}
 
 - (void)updateData;
+
+- (void)updateCloth;
 
 @end

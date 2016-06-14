@@ -20,4 +20,17 @@
 #define IOS7 [[[UIDevice currentDevice] systemVersion]floatValue]>=7
 #define IOS8 [[[UIDevice currentDevice] systemVersion]floatValue]>=8
 
+#define kUserDefaultKeyClothType    @"usserDefaultKeyClothType"
+
+#define setUserDefault(key, object) \
+if (object == nil) \
+[[NSUserDefaults standardUserDefaults] removeObjectForKey:(key)]; \
+else \
+[[NSUserDefaults standardUserDefaults] setObject:(object) forKey:(key)]; \
+[[NSUserDefaults standardUserDefaults] synchronize];
+
+#define getUserDefault(key) \
+[[NSUserDefaults standardUserDefaults] objectForKey:(key)]
+
+
 #endif /* Global_constant_h */

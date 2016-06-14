@@ -14,7 +14,6 @@
     [super awakeFromNib];
     // Initialization code
     UIImage *image = [[UIImage imageNamed:@"icon_file_28"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.imageView.tintColor = kColorAllStyle;
     self.imageView.image = image;
 }
 
@@ -29,6 +28,14 @@
     self.textLabel.text = [entity.path lastPathComponent];
     
     self.detailTextLabel.text = [OFDocHelper inMainPath:[entity.path stringByDeletingLastPathComponent]];
+    
+    [self updateCloth];
+    
+}
+
+- (void)updateCloth
+{
+    self.imageView.tintColor = kColorAllStyle;
 }
 
 @end

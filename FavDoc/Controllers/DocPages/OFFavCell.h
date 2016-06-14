@@ -6,9 +6,9 @@
 //  Copyright © 2016年 OneFish. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "OFBaseCell.h"
 
-@interface OFFavCell : UITableViewCell
+@interface OFFavCell : OFBaseCell
 
 @property(nonatomic, strong)OFFavEntity *entity;
 

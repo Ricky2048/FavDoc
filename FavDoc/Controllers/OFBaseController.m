@@ -17,8 +17,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
+    [self updateCloth];
+    
+    _updateClothCount = [OFClothHelper shareInstance].updateClothCount;
+    
+    _isFirstLoad = YES;
+
     self.view.backgroundColor = kColorViewBg;
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([OFClothHelper shareInstance].updateClothCount > _updateClothCount || _isFirstLoad) {
+        
+        _updateClothCount = [OFClothHelper shareInstance].updateClothCount;
+        
+        [self updateCloth];
+    }
+    
+    _isFirstLoad = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +51,11 @@
 - (void)updateData
 {
     
+}
+
+- (void)updateCloth
+{
+
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

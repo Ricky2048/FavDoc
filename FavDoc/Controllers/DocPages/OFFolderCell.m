@@ -15,7 +15,6 @@
     // Initialization code
     
     UIImage *image = [[UIImage imageNamed:@"icon_floder_28"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.imageView.tintColor = kColorAllStyle;
     self.imageView.image = image;
 }
 
@@ -49,7 +48,12 @@
     
     self.detailTextLabel.text = detailStr;
 
+    [self updateCloth];
 }
 
+- (void)updateCloth
+{
+    self.imageView.tintColor = kColorAllStyle;
+}
 
 @end

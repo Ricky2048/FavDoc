@@ -23,7 +23,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    _tableView.separatorColor = kColorAllStyle;
 
     _favList = @[];
 }
@@ -54,6 +53,13 @@
 
 
 #pragma mark - Actions
+
+- (void)updateCloth
+{
+    _tableView.separatorColor = kColorLine;
+    
+    [_tableView reloadData];
+}
 
 - (void)updateData
 {

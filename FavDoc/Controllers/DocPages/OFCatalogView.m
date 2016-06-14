@@ -60,10 +60,7 @@
 
 - (void)awakeFromNib
 {
-    [_backBtn setTintColor:kColorAllStyle];
-    [_operateBtn setTintColor:kColorAllStyle];
-    
-    _scrollView.layer.cornerRadius = 3;
+     _scrollView.layer.cornerRadius = 3;
     _scrollView.layer.masksToBounds = YES;
     
     _pathTextView.delegate = self;
@@ -71,9 +68,17 @@
     _pathTextView.textContainer.lineFragmentPadding = 0;
     _pathTextView.textContainer.maximumNumberOfLines = 1;
     _pathTextView.textContainer.lineBreakMode = NSLineBreakByTruncatingHead;
-    _pathTextView.linkTextAttributes = @{NSForegroundColorAttributeName:kColorAllStyle};
+    
+    [self updateCloth];
 }
 
+- (void)updateCloth
+{
+    [_backBtn setTintColor:kColorAllStyle];
+    [_operateBtn setTintColor:kColorAllStyle];
+    _pathTextView.linkTextAttributes = @{NSForegroundColorAttributeName:kColorAllStyle};
+
+}
 - (void)setPath:(NSString *)path
 {
 //    NSLog(@"--- %@",path);

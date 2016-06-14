@@ -107,6 +107,8 @@
                     <connections>
                         <outlet property="_tableView" destination="R6k-4W-qLC" id="F98-IX-sjB"/>
                         <segue destination="bSG-uX-Syx" kind="show" identifier="settingToCloth" id="0ia-H2-ENr"/>
+                        <segue destination="R8n-KC-O6j" kind="show" identifier="settingToHistory" id="JeI-Ml-KhR"/>
+                        <segue destination="GUa-c5-PMa" kind="show" identifier="settingToFav" id="vVP-PR-tdt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yy8-BR-f4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,20 +127,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-z9-aDY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-z9-aDY">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="FVt-ju-Gf0" style="IBUITableViewCellStyleDefault" id="LfH-sG-2cT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" textLabel="FVt-ju-Gf0" style="IBUITableViewCellStyleDefault" id="LfH-sG-2cT">
                                         <rect key="frame" x="0.0" y="113.5" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LfH-sG-2cT" id="oS4-GG-Ia5">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FVt-ju-Gf0">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="49.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -242,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBc-lw-kV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2340" y="1426"/>
+            <point key="canvasLocation" x="3075" y="1404"/>
         </scene>
         <!--History-->
         <scene sceneID="rxW-q6-vYh">
@@ -322,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCi-7p-iCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2340" y="551"/>
+            <point key="canvasLocation" x="3075" y="529"/>
         </scene>
         <!--Mian-->
         <scene sceneID="n4r-cS-1WN">
@@ -634,4 +636,8 @@
         <image name="icon_file_28" width="28" height="28"/>
         <image name="icon_floder_28" width="28" height="28"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vVP-PR-tdt"/>
+        <segue reference="JeI-Ml-KhR"/>
+    </inferredMetricsTieBreakers>
 </document>
