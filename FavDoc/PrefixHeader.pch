@@ -16,6 +16,7 @@
 
 #import "OFCoreDataHelper.h"
 #import "OFDocHelper.h"
+#import "OFClothHelper.h"
 
 #import "Global_CoreDate.h"
 #import "Global_Segue.h"

@@ -13,6 +13,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    UIImage *image = [[UIImage imageNamed:@"icon_floder_28"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.imageView.tintColor = kColorAllStyle;
+    self.imageView.image = image;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

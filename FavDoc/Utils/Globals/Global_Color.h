@@ -11,9 +11,12 @@
 
 #import "UIColor+OFColor.h"
 
-#define kColorNavBg             [UIColor ColorWithHexString:@"#43CD80"]
+#define kColorTabBarBg          [UIColor ColorWithHexString:@"#FFFFF0"]
 
-#define kColorTabBarBg          [UIColor ColorWithHexString:@"#43CD80"]
-#define kColorTabBarTint        [UIColor ColorWithHexString:@"#FFFFFF"]
+#define kColorViewBg            [UIColor ColorWithHexString:@"#EEEEEE"]
+
+#define kColorAllStyle          [[OFClothHelper shareInstance] currentColor]
+
+#define kColorNavBg             kColorAllStyle
 
 #endif /* Global_Color_h */

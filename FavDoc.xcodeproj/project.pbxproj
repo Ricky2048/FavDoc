@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		5E0841CE1CF57C8400A47C63 /* OFDocHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0841CD1CF57C8400A47C63 /* OFDocHelper.m */; };
 		5E0841F01CF5908500A47C63 /* demo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E0841EF1CF5908500A47C63 /* demo.jpg */; };
+		5E32325E1D0FAA53007B240B /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E32325D1D0FA922007B240B /* iconfont.ttf */; };
+		5E3232651D0FAE78007B240B /* OFFavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3232601D0FAE78007B240B /* OFFavController.m */; };
+		5E3232661D0FAE78007B240B /* OFFavController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3232611D0FAE78007B240B /* OFFavController.xib */; };
+		5E3232671D0FAE78007B240B /* OFHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3232631D0FAE78007B240B /* OFHistoryController.m */; };
+		5E3232681D0FAE78007B240B /* OFHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3232641D0FAE78007B240B /* OFHistoryController.xib */; };
+		5E32326C1D0FAEF6007B240B /* OFSwitchClothController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32326A1D0FAEF6007B240B /* OFSwitchClothController.m */; };
+		5E32326D1D0FAEF6007B240B /* OFSwitchClothController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E32326B1D0FAEF6007B240B /* OFSwitchClothController.xib */; };
+		5E3232701D0FB6CC007B240B /* OFClothHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E32326F1D0FB6CC007B240B /* OFClothHelper.m */; };
 		5E3BB3E11CF3EEFC006DC603 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E01CF3EEFC006DC603 /* main.m */; };
 		5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E31CF3EEFC006DC603 /* AppDelegate.m */; };
 		5E3BB3EA1CF3EEFC006DC603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3BB3E81CF3EEFC006DC603 /* Main.storyboard */; };
@@ -52,10 +60,6 @@
 		5EAD52421D017C0A00BE0553 /* OFMoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAD52401D017C0A00BE0553 /* OFMoreController.xib */; };
 		5EAD52451D0181CF00BE0553 /* OFCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD52441D0181CF00BE0553 /* OFCoreDataHelper.m */; };
 		5EB1B9D41D0EA3A600A3F20F /* UIColor+OFColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1B9D31D0EA3A600A3F20F /* UIColor+OFColor.m */; };
-		5EB1B9DB1D0EB36F00A3F20F /* OFFavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1B9D61D0EB36F00A3F20F /* OFFavController.m */; };
-		5EB1B9DC1D0EB36F00A3F20F /* OFFavController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB1B9D71D0EB36F00A3F20F /* OFFavController.xib */; };
-		5EB1B9DD1D0EB36F00A3F20F /* OFHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1B9D91D0EB36F00A3F20F /* OFHistoryController.m */; };
-		5EB1B9DE1D0EB36F00A3F20F /* OFHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB1B9DA1D0EB36F00A3F20F /* OFHistoryController.xib */; };
 		5EB1B9E01D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB1B9DF1D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets */; };
 		5ECB87241CFBE47A006A2595 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */; };
 		5ECB87261CFBE5B0006A2595 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */; };
@@ -71,6 +75,18 @@
 		5E0841CC1CF57C8400A47C63 /* OFDocHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFDocHelper.h; sourceTree = "<group>"; };
 		5E0841CD1CF57C8400A47C63 /* OFDocHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFDocHelper.m; sourceTree = "<group>"; };
 		5E0841EF1CF5908500A47C63 /* demo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo.jpg; sourceTree = "<group>"; };
+		5E32325D1D0FA922007B240B /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		5E32325F1D0FAE78007B240B /* OFFavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFavController.h; sourceTree = "<group>"; };
+		5E3232601D0FAE78007B240B /* OFFavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFavController.m; sourceTree = "<group>"; };
+		5E3232611D0FAE78007B240B /* OFFavController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFavController.xib; sourceTree = "<group>"; };
+		5E3232621D0FAE78007B240B /* OFHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHistoryController.h; sourceTree = "<group>"; };
+		5E3232631D0FAE78007B240B /* OFHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHistoryController.m; sourceTree = "<group>"; };
+		5E3232641D0FAE78007B240B /* OFHistoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFHistoryController.xib; sourceTree = "<group>"; };
+		5E3232691D0FAEF6007B240B /* OFSwitchClothController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFSwitchClothController.h; sourceTree = "<group>"; };
+		5E32326A1D0FAEF6007B240B /* OFSwitchClothController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFSwitchClothController.m; sourceTree = "<group>"; };
+		5E32326B1D0FAEF6007B240B /* OFSwitchClothController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFSwitchClothController.xib; sourceTree = "<group>"; };
+		5E32326E1D0FB6CC007B240B /* OFClothHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFClothHelper.h; sourceTree = "<group>"; };
+		5E32326F1D0FB6CC007B240B /* OFClothHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFClothHelper.m; sourceTree = "<group>"; };
 		5E3BB3DC1CF3EEFC006DC603 /* FavDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E3BB3E01CF3EEFC006DC603 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E3BB3E21CF3EEFC006DC603 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,12 +166,6 @@
 		5EB1B9D11D0EA28500A3F20F /* Global_Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Global_Color.h; sourceTree = "<group>"; };
 		5EB1B9D21D0EA3A600A3F20F /* UIColor+OFColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+OFColor.h"; sourceTree = "<group>"; };
 		5EB1B9D31D0EA3A600A3F20F /* UIColor+OFColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+OFColor.m"; sourceTree = "<group>"; };
-		5EB1B9D51D0EB36F00A3F20F /* OFFavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFFavController.h; sourceTree = "<group>"; };
-		5EB1B9D61D0EB36F00A3F20F /* OFFavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFFavController.m; sourceTree = "<group>"; };
-		5EB1B9D71D0EB36F00A3F20F /* OFFavController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFFavController.xib; sourceTree = "<group>"; };
-		5EB1B9D81D0EB36F00A3F20F /* OFHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHistoryController.h; sourceTree = "<group>"; };
-		5EB1B9D91D0EB36F00A3F20F /* OFHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFHistoryController.m; sourceTree = "<group>"; };
-		5EB1B9DA1D0EB36F00A3F20F /* OFHistoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OFHistoryController.xib; sourceTree = "<group>"; };
 		5EB1B9DF1D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bar_and_tab_icon.xcassets; sourceTree = "<group>"; };
 		5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -236,8 +246,8 @@
 		5E3BB3DE1CF3EEFC006DC603 /* FavDoc */ = {
 			isa = PBXGroup;
 			children = (
-				5E3BB3FC1CF3F137006DC603 /* Models */,
 				5E4EA3451CF6E59500EE6764 /* Framerwork */,
+				5E3BB3FC1CF3F137006DC603 /* Models */,
 				5E0841EE1CF5907D00A47C63 /* Images */,
 				5E3BB3FF1CF3F158006DC603 /* ThirdParts */,
 				5E3BB3FA1CF3F137006DC603 /* Datas */,
@@ -252,6 +262,7 @@
 		5E3BB3DF1CF3EEFC006DC603 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E32325D1D0FA922007B240B /* iconfont.ttf */,
 				5E3BB3E21CF3EEFC006DC603 /* AppDelegate.h */,
 				5E3BB3E31CF3EEFC006DC603 /* AppDelegate.m */,
 				5E3BB3E81CF3EEFC006DC603 /* Main.storyboard */,
@@ -337,6 +348,12 @@
 				5ECB872E1CFC2402006A2595 /* OFVideoPreviewController.h */,
 				5ECB872F1CFC2402006A2595 /* OFVideoPreviewController.m */,
 				5ECB87301CFC2402006A2595 /* OFVideoPreviewController.xib */,
+				5E32325F1D0FAE78007B240B /* OFFavController.h */,
+				5E3232601D0FAE78007B240B /* OFFavController.m */,
+				5E3232611D0FAE78007B240B /* OFFavController.xib */,
+				5E3232621D0FAE78007B240B /* OFHistoryController.h */,
+				5E3232631D0FAE78007B240B /* OFHistoryController.m */,
+				5E3232641D0FAE78007B240B /* OFHistoryController.xib */,
 			);
 			path = DocPages;
 			sourceTree = "<group>";
@@ -344,15 +361,12 @@
 		5E3BB40A1CF3F25A006DC603 /* SettingPages */ = {
 			isa = PBXGroup;
 			children = (
-				5EB1B9D81D0EB36F00A3F20F /* OFHistoryController.h */,
-				5EB1B9D91D0EB36F00A3F20F /* OFHistoryController.m */,
-				5EB1B9DA1D0EB36F00A3F20F /* OFHistoryController.xib */,
-				5EB1B9D51D0EB36F00A3F20F /* OFFavController.h */,
-				5EB1B9D61D0EB36F00A3F20F /* OFFavController.m */,
-				5EB1B9D71D0EB36F00A3F20F /* OFFavController.xib */,
 				5EAD523E1D017C0A00BE0553 /* OFMoreController.h */,
 				5EAD523F1D017C0A00BE0553 /* OFMoreController.m */,
 				5EAD52401D017C0A00BE0553 /* OFMoreController.xib */,
+				5E3232691D0FAEF6007B240B /* OFSwitchClothController.h */,
+				5E32326A1D0FAEF6007B240B /* OFSwitchClothController.m */,
+				5E32326B1D0FAEF6007B240B /* OFSwitchClothController.xib */,
 			);
 			path = SettingPages;
 			sourceTree = "<group>";
@@ -419,6 +433,8 @@
 				5EAD52441D0181CF00BE0553 /* OFCoreDataHelper.m */,
 				5E0841CC1CF57C8400A47C63 /* OFDocHelper.h */,
 				5E0841CD1CF57C8400A47C63 /* OFDocHelper.m */,
+				5E32326E1D0FB6CC007B240B /* OFClothHelper.h */,
+				5E32326F1D0FB6CC007B240B /* OFClothHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -533,7 +549,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E32325E1D0FAA53007B240B /* iconfont.ttf in Resources */,
 				5EAD52291D012B0F00BE0553 /* demo.mp4 in Resources */,
+				5E32326D1D0FAEF6007B240B /* OFSwitchClothController.xib in Resources */,
+				5E3232661D0FAE78007B240B /* OFFavController.xib in Resources */,
 				5EAD52421D017C0A00BE0553 /* OFMoreController.xib in Resources */,
 				5E4EA33D1CF6954F00EE6764 /* OFFolderCell.xib in Resources */,
 				5EAD52331D016AA900BE0553 /* OFHistoryCell.xib in Resources */,
@@ -542,14 +561,13 @@
 				5E0841F01CF5908500A47C63 /* demo.jpg in Resources */,
 				5E3BB3EF1CF3EEFC006DC603 /* Assets.xcassets in Resources */,
 				5E673D691CF84C19008304AC /* OFFileCell.xib in Resources */,
+				5E3232681D0FAE78007B240B /* OFHistoryController.xib in Resources */,
 				5EAD523D1D0177C000BE0553 /* OFFavCell.xib in Resources */,
 				5E3BB3EA1CF3EEFC006DC603 /* Main.storyboard in Resources */,
 				5E4EA3421CF6DD0C00EE6764 /* OFImagePickerController.xib in Resources */,
 				5ED435081CF6F03C00867059 /* OFImagePreviewController.xib in Resources */,
 				5E3BB4AE1CF434C4006DC603 /* OFMianController.xib in Resources */,
-				5EB1B9DC1D0EB36F00A3F20F /* OFFavController.xib in Resources */,
 				5EB1B9E01D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets in Resources */,
-				5EB1B9DE1D0EB36F00A3F20F /* OFHistoryController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,13 +578,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EB1B9DB1D0EB36F00A3F20F /* OFFavController.m in Sources */,
+				5E3232651D0FAE78007B240B /* OFFavController.m in Sources */,
 				5E673D5E1CF841CA008304AC /* OFHistoryEntity.m in Sources */,
 				5ED435071CF6F03C00867059 /* OFImagePreviewController.m in Sources */,
 				5ED4350B1CF6FB0E00867059 /* Utils.m in Sources */,
 				5E673D681CF84C19008304AC /* OFFileCell.m in Sources */,
+				5E3232701D0FB6CC007B240B /* OFClothHelper.m in Sources */,
 				5E3BB4051CF3F1D9006DC603 /* OFBaseTableController.m in Sources */,
 				5E3BB4B31CF439CB006DC603 /* OFStartController.m in Sources */,
+				5E32326C1D0FAEF6007B240B /* OFSwitchClothController.m in Sources */,
 				5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */,
 				5E3BB42C1CF3FBD2006DC603 /* OFDataHelper.m in Sources */,
 				5E4EA33C1CF6954F00EE6764 /* OFFolderCell.m in Sources */,
@@ -577,7 +597,7 @@
 				5E673D641CF841CA008304AC /* OFUserEntity.m in Sources */,
 				5E673D631CF841CA008304AC /* OFUserEntity+CoreDataProperties.m in Sources */,
 				5E3BB3E11CF3EEFC006DC603 /* main.m in Sources */,
-				5EB1B9DD1D0EB36F00A3F20F /* OFHistoryController.m in Sources */,
+				5E3232671D0FAE78007B240B /* OFHistoryController.m in Sources */,
 				5EAD52451D0181CF00BE0553 /* OFCoreDataHelper.m in Sources */,
 				5E3BB4AD1CF434C4006DC603 /* OFMianController.m in Sources */,
 				5E3BB4BA1CF43AE3006DC603 /* ReplaceNoAnimationSegue.m in Sources */,

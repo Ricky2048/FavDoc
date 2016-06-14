@@ -29,7 +29,7 @@
     
     self.tabBar.barTintColor = kColorTabBarBg;
     
-    self.tabBar.tintColor = kColorTabBarTint;
+    self.tabBar.tintColor = kColorAllStyle;
  
     
 

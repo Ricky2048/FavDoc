@@ -60,14 +60,18 @@
 
 - (void)awakeFromNib
 {
-    [_backBtn setTintColor:kColorTabBarTint];
-    [_operateBtn setTintColor:kColorTabBarTint];
+    [_backBtn setTintColor:kColorAllStyle];
+    [_operateBtn setTintColor:kColorAllStyle];
+    
+    _scrollView.layer.cornerRadius = 3;
+    _scrollView.layer.masksToBounds = YES;
     
     _pathTextView.delegate = self;
-    _pathTextView.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    _pathTextView.textContainerInset = UIEdgeInsetsMake(7, 2, 5, 2);
     _pathTextView.textContainer.lineFragmentPadding = 0;
     _pathTextView.textContainer.maximumNumberOfLines = 1;
     _pathTextView.textContainer.lineBreakMode = NSLineBreakByTruncatingHead;
+    _pathTextView.linkTextAttributes = @{NSForegroundColorAttributeName:kColorAllStyle};
 }
 
 - (void)setPath:(NSString *)path
@@ -99,7 +103,7 @@
                 NSArray *arr = [_pathArray subarrayWithRange:NSMakeRange(0, i+1)];
                 NSString *urlStr = [NSString pathWithComponents:arr];
                 NSString * encodingString = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-                NSAttributedString *att2 = [[NSAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:[UIColor blueColor],NSLinkAttributeName:[NSURL URLWithString:encodingString]}];
+                NSAttributedString *att2 = [[NSAttributedString alloc] initWithString:str attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSLinkAttributeName:[NSURL URLWithString:encodingString]}];
                 [_folderAttStr appendAttributedString:att2];
                 
             }

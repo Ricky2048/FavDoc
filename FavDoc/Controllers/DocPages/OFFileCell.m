@@ -18,10 +18,19 @@
     
     _fileTypeLabel.layer.cornerRadius = 3;
     _fileTypeLabel.layer.masksToBounds = YES;
+    _fileTypeLabel.backgroundColor = kColorAllStyle;
+    _fileTypeLabel.highlightedTextColor = kColorAllStyle;
+    _fileTypeLabel.layer.borderColor =  kColorAllStyle.CGColor;
+    _fileTypeLabel.layer.borderWidth = .5;
     
     _imageView.layer.cornerRadius = 3;
     _imageView.layer.masksToBounds = YES;
+    _imageView.layer.borderColor =  kColorAllStyle.CGColor;
+    _imageView.layer.borderWidth = .5;
     
+    _moreBtn.titleLabel.font = [UIFont fontWithName:@"iconfont" size:24];
+    [_moreBtn setTitle:@"\U0000e614" forState:UIControlStateNormal];
+    [_moreBtn setTitleColor:kColorAllStyle forState:UIControlStateNormal];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -32,6 +41,7 @@
 
 - (void)setPath:(NSString *)path name:(NSString *)name
 {
+    
     _path = path;
     _name = name;
     
@@ -77,6 +87,8 @@
         detailStr = [NSString stringWithFormat:@"大小:%@ 尺寸:%.0fx%.0f 创建时间:%@ 修改时间:%@",sizeStr,size.width,size.height,createStr,modifyStr];
         
         _imageView.image = thumbImage;
+        _imageView.hidden = NO;
+        
         _cs_detailLabel_left.constant = 55;
         _cs_typeLabel_left.constant = 55;
         
@@ -90,6 +102,7 @@
 //        _cs_typeLabel_left.constant = 55;
     } else {
         _imageView.image = nil;
+        _imageView.hidden = YES;
         
         _cs_detailLabel_left.constant = 8;
         _cs_typeLabel_left.constant = 8;
@@ -100,9 +113,9 @@
     // 判断是否已经收藏
 
     if ([OFDocHelper isFav:filePath]) {
-        [_moreBtn setTitle:@"★" forState:UIControlStateNormal];
+        [_moreBtn setTitle:@"\U0000e606" forState:UIControlStateNormal];
     }else {
-        [_moreBtn setTitle:@"☆" forState:UIControlStateNormal];
+        [_moreBtn setTitle:@"\U0000e614" forState:UIControlStateNormal];
     }
 
 }
@@ -117,10 +130,10 @@
 
     if (![OFDocHelper isFav:filePath]) {
         [OFDocHelper addToFav:filePath];
-        [_moreBtn setTitle:@"★" forState:UIControlStateNormal];
+        [_moreBtn setTitle:@"\U0000e606" forState:UIControlStateNormal];
     }else {
         [OFDocHelper deleteFav:filePath];
-        [_moreBtn setTitle:@"☆" forState:UIControlStateNormal];
+        [_moreBtn setTitle:@"\U0000e614" forState:UIControlStateNormal];
     }
     
 }

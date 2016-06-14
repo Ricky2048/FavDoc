@@ -24,6 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    _tableView.separatorColor = kColorAllStyle;
+    
     [self setData];
 }
 
@@ -95,7 +97,7 @@
     cell.textLabel.text = text;
     UIImage *image = [UIImage imageNamed:_imageSource[indexPath.row]];
     cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    cell.imageView.tintColor = kColorTabBarBg;
+    cell.imageView.tintColor = kColorAllStyle;
     
     cell.detailTextLabel.text = @"";
     cell.accessoryType = UITableViewCellAccessoryNone;

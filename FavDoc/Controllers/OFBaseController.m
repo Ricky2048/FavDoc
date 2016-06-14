@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+    self.view.backgroundColor = kColorViewBg;
 }
 
 - (void)didReceiveMemoryWarning {

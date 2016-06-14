@@ -12,4 +12,6 @@
 
 #define kSegueStartToMian   @"startToMain"
 
+#define kSegueSettingToCloth   @"settingToCloth"
+
 #endif /* Global_Segue_h */

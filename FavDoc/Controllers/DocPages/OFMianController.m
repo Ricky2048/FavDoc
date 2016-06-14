@@ -47,8 +47,15 @@
     
     _topBgView.backgroundColor = kColorNavBg;
     _catalogView.backgroundColor = kColorNavBg;
+    _tableView.separatorColor = kColorAllStyle;
     
     self.tabBarController.title = @"";
+
+    _leftButton.titleLabel.font = [UIFont fontWithName:@"iconfont" size:24];
+    [_leftButton setTitle:@"\U0000e628" forState:UIControlStateNormal];
+    
+    _rightButton.titleLabel.font = [UIFont fontWithName:@"iconfont" size:24];
+    [_rightButton setTitle:@"\U0000e632" forState:UIControlStateNormal];
 
     _fileDic = @{keyPath:@"/",keyFolder:@[],keyFile:@[]};
 
@@ -224,6 +231,15 @@
         return @"  文件夹";
     }
     return @"  文件";
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    
+    [header.textLabel setTextColor:kColorAllStyle];
+    
+    header.contentView.backgroundColor = [UIColor clearColor];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
