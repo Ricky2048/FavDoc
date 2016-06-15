@@ -15,6 +15,8 @@
     __weak IBOutlet UITableView *_tableView;
     
     NSArray *_historyList;
+    
+    UIButton *_rightBtn;
 }
 @end
 
@@ -25,6 +27,11 @@
     // Do any additional setup after loading the view from its nib.
         
     _historyList = @[];
+    
+    _rightBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    _rightBtn.frame = CGRectMake(0, 5, 60, 30);
+    [_rightBtn setTitle:@"一键清空" forState:UIControlStateNormal];
+
 
     
 }
@@ -33,10 +40,26 @@
 {
     [super viewWillAppear:animated];
 
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:_rightBtn];
+    if (self.tabBarController) {
+        [self.tabBarController.navigationItem setRightBarButtonItem:barItem];
+    }else {
+        [self.navigationItem setRightBarButtonItem:barItem];
+    }
+    
     self.tabBarController.title = @"历史记录";
     self.title = @"历史记录";
     [self updateData];
 
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    if (self.tabBarController) {
+        [self.tabBarController.navigationItem setRightBarButtonItem:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

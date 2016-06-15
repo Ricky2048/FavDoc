@@ -63,6 +63,8 @@
 		5EAD52451D0181CF00BE0553 /* OFCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD52441D0181CF00BE0553 /* OFCoreDataHelper.m */; };
 		5EB1B9D41D0EA3A600A3F20F /* UIColor+OFColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1B9D31D0EA3A600A3F20F /* UIColor+OFColor.m */; };
 		5EB1B9E01D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB1B9DF1D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets */; };
+		5EB627101D10FB24008612E9 /* OFLockHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6270F1D10FB24008612E9 /* OFLockHelper.m */; };
+		5EB627131D10FBDE008612E9 /* UIView+OFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB627121D10FBDE008612E9 /* UIView+OFView.m */; };
 		5ECB87241CFBE47A006A2595 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */; };
 		5ECB87261CFBE5B0006A2595 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */; };
 		5ECB87281CFBF2E9006A2595 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */; };
@@ -173,6 +175,10 @@
 		5EB1B9D21D0EA3A600A3F20F /* UIColor+OFColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+OFColor.h"; sourceTree = "<group>"; };
 		5EB1B9D31D0EA3A600A3F20F /* UIColor+OFColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+OFColor.m"; sourceTree = "<group>"; };
 		5EB1B9DF1D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bar_and_tab_icon.xcassets; sourceTree = "<group>"; };
+		5EB6270E1D10FB24008612E9 /* OFLockHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFLockHelper.h; sourceTree = "<group>"; };
+		5EB6270F1D10FB24008612E9 /* OFLockHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFLockHelper.m; sourceTree = "<group>"; };
+		5EB627111D10FBDE008612E9 /* UIView+OFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+OFView.h"; sourceTree = "<group>"; };
+		5EB627121D10FBDE008612E9 /* UIView+OFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+OFView.m"; sourceTree = "<group>"; };
 		5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -430,6 +436,8 @@
 				5E3BB4271CF3FB46006DC603 /* UITabBar+MFBadge.m */,
 				5EB1B9D21D0EA3A600A3F20F /* UIColor+OFColor.h */,
 				5EB1B9D31D0EA3A600A3F20F /* UIColor+OFColor.m */,
+				5EB627111D10FBDE008612E9 /* UIView+OFView.h */,
+				5EB627121D10FBDE008612E9 /* UIView+OFView.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -445,6 +453,8 @@
 				5E0841CD1CF57C8400A47C63 /* OFDocHelper.m */,
 				5E32326E1D0FB6CC007B240B /* OFClothHelper.h */,
 				5E32326F1D0FB6CC007B240B /* OFClothHelper.m */,
+				5EB6270E1D10FB24008612E9 /* OFLockHelper.h */,
+				5EB6270F1D10FB24008612E9 /* OFLockHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -601,6 +611,7 @@
 				5E3BB42C1CF3FBD2006DC603 /* OFDataHelper.m in Sources */,
 				5E32327B1D1005C6007B240B /* OFNoSelectionTextView.m in Sources */,
 				5E4EA33C1CF6954F00EE6764 /* OFFolderCell.m in Sources */,
+				5EB627131D10FBDE008612E9 /* UIView+OFView.m in Sources */,
 				5E3BB4081CF3F1F8006DC603 /* OFBaseController.m in Sources */,
 				5E3BB3ED1CF3EEFC006DC603 /* FavDoc.xcdatamodeld in Sources */,
 				5E673D3D1CF74D64008304AC /* OFSelectOperationView.m in Sources */,
@@ -629,6 +640,7 @@
 				5E3BB4BD1CF43E2E006DC603 /* OFBaseNavController.m in Sources */,
 				5E673D611CF841CA008304AC /* OFBaseEntity+CoreDataProperties.m in Sources */,
 				5E0841CE1CF57C8400A47C63 /* OFDocHelper.m in Sources */,
+				5EB627101D10FB24008612E9 /* OFLockHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

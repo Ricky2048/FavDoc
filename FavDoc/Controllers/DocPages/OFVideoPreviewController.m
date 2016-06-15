@@ -13,8 +13,11 @@
 @interface OFVideoPreviewController ()
 {
     
-    
+    __weak IBOutlet UIView *_topBgView;
+
     __weak IBOutlet UIView *_playerView;
+    
+    __weak IBOutlet UIToolbar *_toolBar;
     
     MPMoviePlayerController *_player;
 }
@@ -25,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"视频预览";
     
     [OFDocHelper addToHistory:_filePath];
     
@@ -45,8 +50,6 @@
     
     [_playerView addSubview:_player.view];
 
-    
-
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -65,6 +68,20 @@
     
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [_player pause];
+}
+
+- (void)dealloc
+{
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    
+
+    _player = nil;
+    
+}
 
 - (void)viewDidLayoutSubviews
 {
@@ -87,6 +104,14 @@
 */
 
 #pragma mark - Functions
+
+
+- (void)updateCloth
+{
+    _topBgView.backgroundColor = kColorNavBg;
+    _toolBar.tintColor = [UIColor whiteColor];
+
+}
 
 - (void)movieFinishedCallback:(id)sender
 {

@@ -21,8 +21,6 @@
     
     __weak IBOutlet UIImageView *_imageView;
     
-    __weak IBOutlet UIToolbar *_toolBar;
-    
     CGSize _imageSize; // 图片原有的大小
     CGSize _imageViewSize; // 控件原有大小
     
@@ -34,6 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"图片预览";
     
     if (_filePath) {
         NSString *fullPath = [OFDocHelper fullPath:_filePath];
@@ -50,8 +50,6 @@
     
     [OFDocHelper addToHistory:_filePath];
     
-    _toolBar.alpha = 0;
-
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -76,7 +74,7 @@
 
 - (BOOL)prefersStatusBarHidden
 {
-    return YES;
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,9 +104,13 @@
 // 添加所有的手势
 - (void) addGestureRecognizerToView:(UIView *)view
 {
-    
+    UITapGestureRecognizer * doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+    [doubleTap setNumberOfTapsRequired:2];
+    [view addGestureRecognizer:doubleTap];
+
     // 点击手势
     UITapGestureRecognizer *tapGestureRecongnizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)];
+    [tapGestureRecongnizer requireGestureRecognizerToFail:doubleTap];
     [self.view addGestureRecognizer:tapGestureRecongnizer];
     
     // 旋转手势
@@ -128,12 +130,18 @@
 - (void) tapView:(UITapGestureRecognizer *)tapGestureRecongnizer
 {
     [UIView animateWithDuration:0.2 animations:^{
-        if (_toolBar.alpha == 1) {
-            _toolBar.alpha = 0;
+        if (self.navigationController.navigationBarHidden) {
+            [self.navigationController setNavigationBarHidden:NO animated:NO];
         }else {
-            _toolBar.alpha = 1;
+            [self.navigationController setNavigationBarHidden:YES animated:NO];
         }
     }];
+}
+
+// 处理双击
+- (void)handleDoubleTap:(UITapGestureRecognizer *)tap
+{
+    
 }
 
 // 处理旋转手势
@@ -162,13 +170,13 @@
             
             CGPoint center = _imageView.center;
             
-            if (view.frame.size.width / _imageViewSize.width > 5) {
+            if (view.width / _imageViewSize.width > 5) {
                 
                 view.frame = CGRectMake(0, 0, _imageViewSize.width*5, _imageViewSize.height*5);
                 view.center = center;
             }
             
-            if (view.frame.size.width / _imageViewSize.width < .5) {
+            if (view.width / _imageViewSize.width < .5) {
                 
                 view.frame = CGRectMake(0, 0, _imageViewSize.width*.5, _imageViewSize.height*.5);
                 view.center = center;
@@ -215,16 +223,6 @@
 
 #pragma mark - Actions
 
-- (IBAction)backAction:(id)sender {
-    
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-    
-}
 
-- (IBAction)operateAction:(id)sender {
-    
-}
 
 @end

@@ -29,7 +29,8 @@
 
 @implementation OFClothHelper
 
-+ (OFClothHelper *)shareInstance {
++ (OFClothHelper *)shareInstance
+{
     
     static OFClothHelper *_helper = nil;
     static dispatch_once_t oncePredicate;

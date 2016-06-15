@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,7 +11,6 @@
                 <outlet property="_cs_imageView_height" destination="lhs-pk-Bd1" id="p9L-E8-1Jh"/>
                 <outlet property="_cs_imageView_width" destination="8oM-lB-GRp" id="Aga-dG-svM"/>
                 <outlet property="_imageView" destination="zH2-Wy-gOn" id="WLR-dC-xi4"/>
-                <outlet property="_toolBar" destination="CzV-0q-75t" id="x9l-6i-63S"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,43 +26,14 @@
                         <constraint firstAttribute="height" constant="496" id="lhs-pk-Bd1"/>
                     </constraints>
                 </imageView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzV-0q-75t">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="yO0-Ww-uW4"/>
-                    </constraints>
-                    <items>
-                        <barButtonItem title="返回" width="40" id="RDn-t6-wVt">
-                            <connections>
-                                <action selector="backAction:" destination="-1" id="xbt-mc-IYW"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="TR2-vR-qiO"/>
-                        <barButtonItem enabled="NO" title="图像预览" style="plain" id="jPk-5V-cNs">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="QAP-tA-Wij"/>
-                        <barButtonItem title="操作" id="MT1-QV-IXM">
-                            <connections>
-                                <action selector="operateAction:" destination="-1" id="J46-wA-mOi"/>
-                            </connections>
-                        </barButtonItem>
-                    </items>
-                    <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="zH2-Wy-gOn" firstAttribute="width" secondItem="zH2-Wy-gOn" secondAttribute="height" multiplier="3:2" id="8gn-iw-Lvq"/>
                 <constraint firstItem="zH2-Wy-gOn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="JAO-7P-IfY"/>
-                <constraint firstItem="CzV-0q-75t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Klk-Bn-YvQ"/>
-                <constraint firstAttribute="trailing" secondItem="CzV-0q-75t" secondAttribute="trailing" id="MoH-7Z-A0f"/>
                 <constraint firstItem="zH2-Wy-gOn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OAm-wM-yHY"/>
-                <constraint firstItem="CzV-0q-75t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b4M-QZ-KhH"/>
                 <constraint firstAttribute="trailing" secondItem="zH2-Wy-gOn" secondAttribute="trailing" constant="40" id="cLu-1B-iD1"/>
                 <constraint firstItem="zH2-Wy-gOn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lUc-SO-2lz"/>
-                <constraint firstItem="zH2-Wy-gOn" firstAttribute="top" secondItem="CzV-0q-75t" secondAttribute="bottom" constant="20" id="sqq-bP-LHs"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -72,7 +42,6 @@
                     <exclude reference="8gn-iw-Lvq"/>
                     <exclude reference="JAO-7P-IfY"/>
                     <exclude reference="cLu-1B-iD1"/>
-                    <exclude reference="sqq-bP-LHs"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="124" y="296"/>

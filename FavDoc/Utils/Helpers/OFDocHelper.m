@@ -23,7 +23,8 @@
 @implementation OFDocHelper
 
 
-+ (OFDocHelper *)shareInstance {
++ (OFDocHelper *)shareInstance
+{
     
     static OFDocHelper *_helper = nil;
     static dispatch_once_t oncePredicate;

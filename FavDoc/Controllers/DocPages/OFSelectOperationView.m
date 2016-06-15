@@ -21,7 +21,6 @@
         [self addSubview:_maskView];
         
         [self setData];
-
         
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(point.x-4, point.y+4, widthOfView, hightOfRow*numOfRow)];
         _tableView.delegate = self;
@@ -31,12 +30,11 @@
         _tableView.layer.cornerRadius = 3;
         [self addSubview:_tableView];
         
-        
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideMaskView)];
         tap.delegate = self;
         [_maskView addGestureRecognizer:tap];
         
-        _topArrow = [[UIImageView alloc] initWithFrame:CGRectMake(_tableView.frame.origin.x + _tableView.frame.size.width - 26, _tableView.frame.origin.y - 14, 20, 20)];
+        _topArrow = [[UIImageView alloc] initWithFrame:CGRectMake(_tableView.left + _tableView.width - 26, _tableView.top - 14, 20, 20)];
         _topArrow.image = [[UIImage imageNamed:@"icon_topArrow_20"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 
         [self addSubview:_topArrow];
@@ -60,15 +58,17 @@
 
 - (void)setData
 {
-    _dataSource = @[@"新建文件夹",
-                    @"相册选择",
-                    @"相机拍摄",
-                    @"新建文本",
-                    @"粘贴"];
+    _dataSource = @[SelectOptionNewFolder,
+                    SelectOptionFromAblum,
+                    SelectOptionUSerCamera,
+                    SelectOptionNewText,
+                    SelectOptionNewRecord,
+                    SelectOptionPlaste];
     
     _imageSource = @[@"icon_floder_1_28",
                      @"icon_album_28",
                      @"icon_camera_28",
+                     @"icon_record_28",
                      @"icon_text_28",
                      @"icon_plaste_28"];
 }
@@ -127,7 +127,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (_operationBlock) {
-        _operationBlock(indexPath.row);
+        NSString *name = _dataSource[indexPath.row];
+        _operationBlock(name);
     }
 }
 

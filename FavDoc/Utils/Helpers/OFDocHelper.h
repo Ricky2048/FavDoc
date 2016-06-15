@@ -12,7 +12,7 @@
 
 #define defaultFloder1 @"/我的图片"
 #define defaultFloder2 @"/我的文件"
-#define defaultDemoFile @"/使用说明"
+#define defaultDemoFile @"使用说明"
 
 #define keyFolder @"folder"
 #define keyFile @"files"

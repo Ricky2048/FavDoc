@@ -8,18 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-#define numOfRow 5
+#define numOfRow 6
 #define hightOfRow 44
 #define widthOfView 166
 
-typedef enum : NSUInteger {
-    OFSelectOperationCreateFolder,
-    OFSelectOperationAddPhoto,
-    OFSelectOperationClearFolder,
-    OFSelectOperationMoveFolder
-} OFSelectOperation;
+#define SelectOptionNewFolder   @"新建文件夹"
+#define SelectOptionFromAblum   @"相册选择"
+#define SelectOptionUSerCamera  @"相机拍摄"
+#define SelectOptionNewText     @"新建录音"
+#define SelectOptionNewRecord   @"新建文本"
+#define SelectOptionPlaste      @"粘贴"
 
-typedef void (^SelectOperationBlock) (OFSelectOperation operation);
+typedef void (^SelectOperationBlock) (NSString *selectOption);
 
 @interface OFSelectOperationView : UIView<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 {

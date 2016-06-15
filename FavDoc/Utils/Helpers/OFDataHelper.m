@@ -10,7 +10,8 @@
 
 @implementation OFDataHelper
 
-+ (OFDataHelper *)shareInstance {
++ (OFDataHelper *)shareInstance
+{
     
     static OFDataHelper *_helper = nil;
     static dispatch_once_t oncePredicate;

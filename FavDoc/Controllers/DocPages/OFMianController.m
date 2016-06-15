@@ -47,8 +47,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.tabBarController.title = @"";
-
     _leftButton.titleLabel.font = [UIFont fontWithName:@"iconfont" size:24];
     [_leftButton setTitle:@"\U0000e628" forState:UIControlStateNormal];
     
@@ -64,50 +62,56 @@
         [weakSelf setPath:dir];
     }];
     
-    _maskView = [[OFSelectOperationView alloc] initWithFrame:self.view.bounds point:CGPointMake(self.view.frame.size.width-widthOfView, 64)];
+    _maskView = [[OFSelectOperationView alloc] initWithFrame:self.view.bounds point:CGPointMake(self.view.width-widthOfView, 64)];
     [self.view addSubview:_maskView];
     _maskView.hidden = YES;
     
-    [_maskView addSelectBlock:^(OFSelectOperation operation) {
+    
+    
+    [_maskView addSelectBlock:^(NSString *selectOption) {
         
         weakSelf.maskView.hidden = YES;
         
-        switch (operation) {
-            case OFSelectOperationCreateFolder:
-            {
-                NSString *path = weakSelf.fileDic[keyPath];
-                path = [path stringByAppendingPathComponent:[Utils dateToString:[NSDate date]]];
+        if ([selectOption isEqualToString:SelectOptionNewFolder]) {
+            NSString *path = weakSelf.fileDic[keyPath];
+            path = [path stringByAppendingPathComponent:[Utils dateToString:[NSDate date]]];
+            
+            [[OFDocHelper shareInstance] createDirectoryAtPath:path];
+            
+            [weakSelf updateData];
+        }
+      
+        if ([selectOption isEqualToString:SelectOptionFromAblum]) {
+
+            
+        }
+       
+        if ([selectOption isEqualToString:SelectOptionUSerCamera]) {
+            
+            OFImagePickerController *vc = [[OFImagePickerController alloc] initWithNibName:@"OFImagePickerController" bundle:nil];
+            vc.folderPath = weakSelf.fileDic[keyPath];
+            [weakSelf presentViewController:vc animated:YES completion:^{
                 
-                [[OFDocHelper shareInstance] createDirectoryAtPath:path];
-                
-                [weakSelf updateData];
-                
-            }
-                break;
-            case OFSelectOperationAddPhoto:
-            {
-                OFImagePickerController *vc = [[OFImagePickerController alloc] initWithNibName:@"OFImagePickerController" bundle:nil];
-                vc.folderPath = weakSelf.fileDic[keyPath];
-                [weakSelf presentViewController:vc animated:YES completion:^{
-                    
-                }];
-            }
-                break;
-            case OFSelectOperationClearFolder:
-            {
-                
-            }
-                break;
-            case OFSelectOperationMoveFolder:
-            {
-                
-            }
-                break;
-            default:
-                break;
+            }];
         }
         
+        if ([selectOption isEqualToString:SelectOptionNewText]) {
+    
+            
+        }
+        
+        if ([selectOption isEqualToString:SelectOptionNewRecord]) {
+            
+        }
+        
+        if ([selectOption isEqualToString:SelectOptionPlaste]) {
+            
+        }
+  
+        
+        
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -118,6 +122,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    self.tabBarController.title = @"文件夹";
     
     [self.tabBarController.navigationController setNavigationBarHidden:YES animated:NO];
     
@@ -303,53 +309,24 @@
         
         OFImagePreviewController *vc = [[OFImagePreviewController alloc] initWithNibName:@"OFImagePreviewController" bundle:nil];
         vc.filePath = path;
-        [self presentViewController:vc animated:NO completion:^{
-            
-        }];
+        [self.tabBarController.navigationController pushViewController:vc animated:YES];
+
     }else if ([ext.uppercaseString isEqualToString:@"MP4"]) {
         OFVideoPreviewController *vc = [[OFVideoPreviewController alloc] initWithNibName:@"OFVideoPreviewController" bundle:nil];
         vc.filePath = path;
-        [self presentViewController:vc animated:NO completion:^{
-            
-        }];
+        [self.tabBarController.navigationController pushViewController:vc animated:YES];
     }
     
 }
 
 
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    // Return NO if you do not want the specified item to be editable.
-//    
-//    if (indexPath.section == 0 ) {
-//        NSArray *arr = _fileDic[keyFolder];
-//        NSString *path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
-//        if ([path isEqualToString:@"/Videos"]||[path isEqualToString:@"/Pictures"]) {
-//            return NO;
-//        }
-//    }
-//    return YES;
-//    
-//}
-
 
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 //    if (editingStyle == UITableViewCellEditingStyleDelete) {
 //        // Delete the row from the data source
-//        
-//        NSString *path;
-//        
-//        if (indexPath.section == 0) {
-//            NSArray *arr = _fileDic[keyFolder];
-//            path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
-//        }
-//        if (indexPath.section == 1) {
-//            NSArray *arr = _fileDic[keyFile];
-//            path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[indexPath.row]];
-//        }
-//        if ([[OFDocHelper shareInstance] deleteItemAtPath:path]) {
-//            [self updateData];
-//        }
-//        
+        
+
+//
 //    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
 //        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
 //    }
@@ -433,7 +410,19 @@
         return;
     }
 
+    NSString *path;
     
+    if (_currentIndex.section == 0) {
+        NSArray *arr = _fileDic[keyFolder];
+        path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[_currentIndex.row]];
+    }
+    if (_currentIndex.section == 1) {
+        NSArray *arr = _fileDic[keyFile];
+        path = [_fileDic[keyPath] stringByAppendingPathComponent:arr[_currentIndex.row]];
+    }
+    if ([[OFDocHelper shareInstance] deleteItemAtPath:path]) {
+        [self updateData];
+    }
 }
 
 - (BOOL)canEditCurrentIndex

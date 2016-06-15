@@ -13,6 +13,9 @@
     NSInteger _updateClothCount;
     
     BOOL _isFirstLoad;
+
+
+    
 }
 
 - (void)updateData;

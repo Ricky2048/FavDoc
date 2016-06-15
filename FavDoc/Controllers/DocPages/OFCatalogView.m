@@ -132,7 +132,7 @@
     CGSize size = [_folderAttStr boundingRectWithSize:CGSizeMake(5000, 29) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
     size.width +=15;
 
-    _scrollView.contentOffset = CGPointMake(MAX(0, size.width-_scrollView.frame.size.width), 0);
+    _scrollView.contentOffset = CGPointMake(MAX(0, size.width-_scrollView.width), 0);
     
     _pathTextView.attributedText = _folderAttStr;
     
