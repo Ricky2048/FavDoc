@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
     <entity name="Base" representedClassName="OFBaseEntity" isAbstract="YES" syncable="YES"/>
     <entity name="Fav" representedClassName="OFFavEntity" parentEntity="Base" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
@@ -14,6 +14,12 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Record" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="OFUserEntity" parentEntity="Base" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,11 +27,13 @@
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password_md5" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="user_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="user_key" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Base" positionX="-9" positionY="117" width="128" height="45"/>
         <element name="Fav" positionX="-36" positionY="81" width="128" height="120"/>
         <element name="History" positionX="-27" positionY="81" width="128" height="105"/>
-        <element name="User" positionX="-45" positionY="54" width="128" height="135"/>
+        <element name="User" positionX="-45" positionY="54" width="128" height="150"/>
+        <element name="Record" positionX="-27" positionY="108" width="128" height="105"/>
     </elements>
 </model>

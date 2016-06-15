@@ -65,6 +65,7 @@
 		5EB1B9E01D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB1B9DF1D0EC0E800A3F20F /* Bar_and_tab_icon.xcassets */; };
 		5EB627101D10FB24008612E9 /* OFLockHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6270F1D10FB24008612E9 /* OFLockHelper.m */; };
 		5EB627131D10FBDE008612E9 /* UIView+OFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB627121D10FBDE008612E9 /* UIView+OFView.m */; };
+		5EB627161D110AD1008612E9 /* OFRecordHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB627151D110AD1008612E9 /* OFRecordHelper.m */; };
 		5ECB87241CFBE47A006A2595 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */; };
 		5ECB87261CFBE5B0006A2595 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */; };
 		5ECB87281CFBF2E9006A2595 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */; };
@@ -179,6 +180,8 @@
 		5EB6270F1D10FB24008612E9 /* OFLockHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFLockHelper.m; sourceTree = "<group>"; };
 		5EB627111D10FBDE008612E9 /* UIView+OFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+OFView.h"; sourceTree = "<group>"; };
 		5EB627121D10FBDE008612E9 /* UIView+OFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+OFView.m"; sourceTree = "<group>"; };
+		5EB627141D110AD1008612E9 /* OFRecordHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFRecordHelper.h; sourceTree = "<group>"; };
+		5EB627151D110AD1008612E9 /* OFRecordHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFRecordHelper.m; sourceTree = "<group>"; };
 		5ECB87231CFBE47A006A2595 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5ECB87251CFBE5B0006A2595 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		5ECB87271CFBF2E9006A2595 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -455,6 +458,8 @@
 				5E32326F1D0FB6CC007B240B /* OFClothHelper.m */,
 				5EB6270E1D10FB24008612E9 /* OFLockHelper.h */,
 				5EB6270F1D10FB24008612E9 /* OFLockHelper.m */,
+				5EB627141D110AD1008612E9 /* OFRecordHelper.h */,
+				5EB627151D110AD1008612E9 /* OFRecordHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				5E32326C1D0FAEF6007B240B /* OFSwitchClothController.m in Sources */,
 				5E3BB3E41CF3EEFC006DC603 /* AppDelegate.m in Sources */,
 				5E3BB42C1CF3FBD2006DC603 /* OFDataHelper.m in Sources */,
+				5EB627161D110AD1008612E9 /* OFRecordHelper.m in Sources */,
 				5E32327B1D1005C6007B240B /* OFNoSelectionTextView.m in Sources */,
 				5E4EA33C1CF6954F00EE6764 /* OFFolderCell.m in Sources */,
 				5EB627131D10FBDE008612E9 /* UIView+OFView.m in Sources */,
